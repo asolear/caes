@@ -1,17 +1,5 @@
 
 # IND090  Sustitución o reemplazo de compresor de aire Ficha por uno más eficiente
 
-<a href='../IND090  Sustitución o reemplazo de compresor de aire Ficha por uno más eficiente.pdf' download>
-<button class='md-button -primary' 
-id='download-btn' style="position: fixed; top: 10%; right: 20px; 
-        transform: translateY(-50%); z-index: 1000;  border: none; ">
-:fontawesome-solid-file-arrow-down: 
-</button>
-</a>
-
-<div 
-    id='../IND090  Sustitución o reemplazo de compresor de aire Ficha por uno más eficiente.pdf' 
-    data-pdf-url='../IND090  Sustitución o reemplazo de compresor de aire Ficha por uno más eficiente.pdf'
-    style=' width: 100%; height: auto;overflow: auto;'>
-</div>
+<iframe src="../IND090  Sustitución o reemplazo de compresor de aire Ficha por uno más eficiente.pdf" width="100%" height="1000px"></iframe>
 

@@ -1,4 +1,5 @@
-site_name: .
+site_name: "CAEs"
+site_url: "https://calcae.es/caes/"
 theme:
   name: material
   custom_dir: overrides
@@ -11,8 +12,7 @@ plugins:
 markdown_extensions:
   - toc:
       permalink: true
-extra_javascript:
-  - js/pdfjs/pdf.mj
+
 extra:
   generator: false
   analytics:

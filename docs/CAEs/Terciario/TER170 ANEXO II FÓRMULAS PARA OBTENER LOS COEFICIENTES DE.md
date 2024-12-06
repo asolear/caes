@@ -1,17 +1,5 @@
 
 # TER170 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
 
-<a href='../TER170 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE.pdf' download>
-<button class='md-button -primary' 
-id='download-btn' style="position: fixed; top: 10%; right: 20px; 
-        transform: translateY(-50%); z-index: 1000;  border: none; ">
-:fontawesome-solid-file-arrow-down: 
-</button>
-</a>
-
-<div 
-    id='../TER170 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE.pdf' 
-    data-pdf-url='../TER170 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE.pdf'
-    style=' width: 100%; height: auto;overflow: auto;'>
-</div>
+<iframe src="../TER170 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE.pdf" width="100%" height="1000px"></iframe>
 

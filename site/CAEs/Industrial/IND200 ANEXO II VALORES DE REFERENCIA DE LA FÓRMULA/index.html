@@ -1,0 +1,6331 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://calcae.es/caes/CAEs/Industrial/IND200%20ANEXO%20II%20VALORES%20DE%20REFERENCIA%20DE%20LA%20F%C3%93RMULA/">
+      
+      
+        <link rel="prev" href="../IND200%20%20Implantaci%C3%B3n%20de%20sistemas%20economizadores%20o%20multietapa%2C%20en%20instalaci%C3%B3n%20frigor%C3%ADfica%20centralizada%20o%20compacta/">
+      
+      
+        <link rel="next" href="../IND210%20%20Reducci%C3%B3n%20de%20la%20presi%C3%B3n%20de%20condensaci%C3%B3n%20en%20Ficha%20instalaci%C3%B3n%20frigor%C3%ADfica%20centralizada%20o%20compacta%20por%20cambio%20a%20tecnolog%C3%ADa%20m%C3%A1s%20eficiente/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.28">
+    
+    
+      
+        <title>IND200 ANEXO II VALORES DE REFERENCIA DE LA FÓRMULA - CAEs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-XXXXXXXXX"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-XXXXXXXXX",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXX",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+  
+    <script>var consent;"undefined"==typeof __md_analytics||(consent=__md_get("__consent"))&&consent.analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+<script type='module'>
+    import * as pdfjsLib from '/js/pdfjs/pdf.mjs';
+    document.addEventListener('DOMContentLoaded', function () {
+        pdfjsLib.GlobalWorkerOptions.workerSrc = '/js/pdfjs/pdf.worker.mjs';
+        function renderPage(pdf, pageNumber, container) {
+            return pdf.getPage(pageNumber).then(page => {
+                const viewport = page.getViewport({ scale: 1 });
+                const containerWidth = container.clientWidth;
+                const scale = containerWidth / viewport.width;
+                const scaledViewport = page.getViewport({ scale });
+                const canvas = document.createElement('canvas');
+                canvas.className = 'pdf-page';
+                const context = canvas.getContext('2d');
+                canvas.style.width = `${scaledViewport.width}px`;
+                canvas.style.height = `${scaledViewport.height}px`;
+                const resolutionScale = 2;
+                canvas.height = scaledViewport.height * resolutionScale;
+                canvas.width = scaledViewport.width * resolutionScale;
+                container.appendChild(canvas);
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: page.getViewport({ scale: scale * resolutionScale })
+                };
+                return page.render(renderContext).promise;
+            });
+        }
+        function renderPdf(url, container) {
+            return pdfjsLib.getDocument(url).promise.then(pdf => {
+                console.log(`PDF cargado en ${container.id}`);
+                const totalPages = pdf.numPages;
+                const renderPromises = [];
+                for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
+                    renderPromises.push(renderPage(pdf, pageNumber, container));
+                }
+                return Promise.all(renderPromises);
+            }).then(() => {
+                console.log(`Todas las páginas renderizadas en ${container.id}`);
+            }).catch(reason => {
+                console.error(reason);
+            });
+        }
+        function setupPdfContainers() {
+            document.querySelectorAll('[data-pdf-url]').forEach(container => {
+                const url = container.getAttribute('data-pdf-url');
+                renderPdf(url, container);
+            });
+        }
+        function setupDownloadButtons() {
+            document.querySelectorAll('[id^="download-btn-"]').forEach(button => {
+                const index = button.id.split('-').pop();
+                const url = document.getElementById(`pdf-container-${index}`).getAttribute('data-pdf-url');
+                button.addEventListener('click', function () {
+                    window.location.href = url;
+                });
+            });
+        }
+        setupPdfContainers();
+        setupDownloadButtons();
+    });
+</script>
+
+
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ind200-anexo-ii-valores-de-referencia-de-la-formula" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../.." title="CAEs" class="md-header__button md-logo" aria-label="CAEs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CAEs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              IND200 ANEXO II VALORES DE REFERENCIA DE LA FÓRMULA
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Pestañas" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Agrario/AGR010%20%20Pantallas%20t%C3%A9rmicas%20en%20invernaderos/" class="md-tabs__link">
+          
+  
+  CAEs
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="CAEs" class="md-nav__button md-logo" aria-label="CAEs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    CAEs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    CAEs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            CAEs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_1" id="__nav_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Agrario
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Agrario
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agrario/AGR010%20%20Pantallas%20t%C3%A9rmicas%20en%20invernaderos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AGR010 Pantallas térmicas en invernaderos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agrario/AGR010%20ANEXO%20III%20DECLARACI%C3%93N%20RESPONSABLE%20DEL%20VALOR%20DEL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AGR010 ANEXO III DECLARACIÓN RESPONSABLE DEL VALOR DEL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Agrario/AGR020%20%20Recuperaci%C3%B3n%20del%20calor%20del%20proceso%20de%20preenfriamiento%20de%20la%20leche%20para%20usos%20t%C3%A9rmicos%20en%20la%20explotaci%C3%B3n%20ganadera/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AGR020 Recuperación del calor del proceso de preenfriamiento de la leche para usos térmicos en la explotación ganadera
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Industrial
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Industrial
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND010%20%20Mejora%20del%20aislamiento%20de%20tuber%C3%ADas%20y%20superficies%20planas%20de%20instalaciones%20y%20equipos%20utilizados%20en%20procesos%20industriales%20para%20temperaturas%20de%20m%C3%A1s%20de%2060%C2%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND010 Mejora del aislamiento de tuberías y superficies planas de instalaciones y equipos utilizados en procesos industriales para temperaturas de más de 60°
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND010%20ANEXO%20II%20INFORME%20JUSTIFICATIVO%20DE%20LA%20INSTALACI%C3%93N%20OBJETO%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND010 ANEXO II INFORME JUSTIFICATIVO DE LA INSTALACIÓN OBJETO DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND010%20ANEXO%20III%20CERTIFICADO%20DE%20LA%20CORRECTA%20REALIZACI%C3%93N%20DE%20LA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND010 ANEXO III CERTIFICADO DE LA CORRECTA REALIZACIÓN DE LA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND010%20ANEXO%20IV%20P%C3%89RDIDAS%20T%C3%89RMICAS%20OBJETIVO%20DE%20ACUERDO%20CON/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND010 ANEXO IV PÉRDIDAS TÉRMICAS OBJETIVO DE ACUERDO CON
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND010%20ANEXO%20V%20P%C3%89RDIDAS%20T%C3%89RMICAS%20PARA%20ESCENARIO%20BASE%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND010 ANEXO V PÉRDIDAS TÉRMICAS PARA ESCENARIO BASE DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND020%20%20Sustituci%C3%B3n%20del%20refrigerante%20de%20una%20instalaci%C3%B3n%20Ficha%20frigor%C3%ADfica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND020 Sustitución del refrigerante de una instalación Ficha frigorífica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND020%20ANEXO%20II%20TABLAS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND020 ANEXO II TABLAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND020%20ANEXO%20III%20NOTA%20INFORMATIVA%20ACERCA%20DE%20LA%20SUSTITUCI%C3%93N%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND020 ANEXO III NOTA INFORMATIVA ACERCA DE LA SUSTITUCIÓN DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND030%20%20Sustituci%C3%B3n%20de%20compresor%20para%20instalaci%C3%B3n%20Ficha%20frigor%C3%ADfica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND030 Sustitución de compresor para instalación Ficha frigorífica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND030%20ANEXO%20II%20TABLAS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND030 ANEXO II TABLAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND040%20%20Sustituci%C3%B3n%20de%20caldera%20de%20combusti%C3%B3n%20existente%20Ficha%20por%20bomba%20de%20calor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND040 Sustitución de caldera de combustión existente Ficha por bomba de calor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND040%20ANEXO%20II%20DECLARACI%C3%93N%20F%C3%93RMULAS%20PARA%20REALIZAR%20LA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND040 ANEXO II DECLARACIÓN FÓRMULAS PARA REALIZAR LA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND040%20ANEXO%20III%20DEMANDA%20ANUAL%20DE%20ENERG%C3%8DA%20PARA%20ACS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND040 ANEXO III DEMANDA ANUAL DE ENERGÍA PARA ACS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND040%20ANEXO%20IV%20RENDIMIENTO%20DE%20CALDERA%20SUSTITUIDA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND040 ANEXO IV RENDIMIENTO DE CALDERA SUSTITUIDA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND040%20ANEXO%20V%20DOCUMENTACI%C3%93N%20T%C3%89CNICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND040 ANEXO V DOCUMENTACIÓN TÉCNICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND050%20%20Sustituci%C3%B3n%20del%20sistema%20de%20iluminaci%C3%B3n%20por%20Ficha%20sistema%20con%20fuentes%20luminosas%20y%20o%20luminarias%20tipo%20LED/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND050 Sustitución del sistema de iluminación por Ficha sistema con fuentes luminosas y o luminarias tipo LED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND050%20ANEXO%20II%20TIEMPO%20ANUAL%20DE%20FUNCIONAMIENTO%20DEL%20SISTEMA%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND050 ANEXO II TIEMPO ANUAL DE FUNCIONAMIENTO DEL SISTEMA DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND060%20%20Sustituci%C3%B3n%20de%20generador%20para%20climatizaci%C3%B3n%20por%20Ficha%20bomba%20de%20calor%20de%20accionamiento%20el%C3%A9ctrico/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND060 Sustitución de generador para climatización por Ficha bomba de calor de accionamiento eléctrico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND060%20ANEXO%20II%20C%C3%81LCULO%20DEL%20RENDIMIENTO%20ESTACIONAL%20DE%20EQUIPOS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND060 ANEXO II CÁLCULO DEL RENDIMIENTO ESTACIONAL DE EQUIPOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND060%20ANEXO%20III%20EQUIVALENCIAS%20CLIMAS%20CTE%2C%20ZONAS%20CLIM%C3%81TICAS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND060 ANEXO III EQUIVALENCIAS CLIMAS CTE, ZONAS CLIMÁTICAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND060%20ANEXO%20IV%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND060 ANEXO IV FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND060%20ANEXO%20V%20DOCUMENTACI%C3%93N%20T%C3%89CNICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND060 ANEXO V DOCUMENTACIÓN TÉCNICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND070%20%20Sustituci%C3%B3n%20de%20bomba%20de%20alta%20presi%C3%B3n%20por%20una%20Ficha%20bomba%20de%20pistones%20axiales/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND070 Sustitución de bomba de alta presión por una Ficha bomba de pistones axiales
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND080%20%20Instalaci%C3%B3n%20de%20una%20c%C3%A1mara%20isob%C3%A1rica%20o%20Ficha%20intercambiador%20de%20presi%C3%B3n%20%28CIP%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND080 Instalación de una cámara isobárica o Ficha intercambiador de presión (CIP)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND081%20%20Sustituci%C3%B3n%20del%20recuperador%2C%20c%C3%A1mara%20isob%C3%A1rica%20o%20Ficha%20intercambiador%20de%20presi%C3%B3n%20%28CIP%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND081 Sustitución del recuperador, cámara isobárica o Ficha intercambiador de presión (CIP)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND090%20%20Sustituci%C3%B3n%20o%20reemplazo%20de%20compresor%20de%20aire%20Ficha%20por%20uno%20m%C3%A1s%20eficiente/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND090 Sustitución o reemplazo de compresor de aire Ficha por uno más eficiente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND090%20ANEXO%20II%20INFORME%20JUSTIFICATIVO%20DE%20LA%20DEMANDA%20DE%20AIRE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND090 ANEXO II INFORME JUSTIFICATIVO DE LA DEMANDA DE AIRE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND110%20%20Recuperaci%C3%B3n%20de%20calor%20de%20un%20compresor%20para%20uso%20Ficha%20de%20calefacci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND110 Recuperación de calor de un compresor para uso Ficha de calefacción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND120%20%20Sustituci%C3%B3n%20de%20quemador%20modulante%20de%20caldera%20Ficha%20de%20combusti%C3%B3n%20de%20gas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND120 Sustitución de quemador modulante de caldera Ficha de combustión de gas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND140%20%20Reforma%2C%20sustituci%C3%B3n%20o%20nueva%20instalaci%C3%B3n%20de%20Ficha%20planta%20enfriadora%20de%20procesos%20de%20alta%20eficiencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND140 Reforma, sustitución o nueva instalación de Ficha planta enfriadora de procesos de alta eficiencia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND140%20ANEXO%20II%20VALORES%20DE%20REFERENCIA%20DE%20LA%20F%C3%93RMULA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND140 ANEXO II VALORES DE REFERENCIA DE LA FÓRMULA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND140%20ANEXO%20III%20INFORME%20JUSTIFICATIVO%20DE%20LA%20CENTRAL%20FRIGOR%C3%8DFICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND140 ANEXO III INFORME JUSTIFICATIVO DE LA CENTRAL FRIGORÍFICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND150%20%20Central%20frigor%C3%ADfica%20de%20alta%20eficiencia%20con%20sistemas%20Ficha%20de%20refrigeraci%C3%B3n%20directa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND150 Central frigorífica de alta eficiencia con sistemas Ficha de refrigeración directa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND150%20ANEXO%20II%20VALORES%20DE%20REFERENCIA%20DE%20LA%20F%C3%93RMULA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND150 ANEXO II VALORES DE REFERENCIA DE LA FÓRMULA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND150%20ANEXO%20III%20INFORME%20JUSTIFICATIVO%20DE%20LA%20CENTRAL%20FRIGOR%C3%8DFICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND150 ANEXO III INFORME JUSTIFICATIVO DE LA CENTRAL FRIGORÍFICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND160%20%20Unidad%20condensadora%20de%20alta%20eficiencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND160 Unidad condensadora de alta eficiencia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND160%20ANEXO%20II%20valores%20de%20referencia%20de%20la%20f%C3%B3rmula/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND160 ANEXO II valores de referencia de la fórmula
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND160%20ANEXO%20III%20INFORME%20JUSTIFICATIVO%20DE%20LA%20CENTRAL%20FRIGOR%C3%8DFICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND160 ANEXO III INFORME JUSTIFICATIVO DE LA CENTRAL FRIGORÍFICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND170%20%20Sustituci%C3%B3n%20de%20motores%20el%C3%A9ctricos%20de%20inducci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND170 Sustitución de motores eléctricos de inducción
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND180%20%20Mejora%20de%20eficiencia%20o%20sustituci%C3%B3n%20de%20intercambiador%20es%20de%20calor%20para%20la%20reducci%C3%B3n%20de%20la%20resistividad%20t%C3%A9rmica%20en%20sistemas%20industriales/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND180 Mejora de eficiencia o sustitución de intercambiador es de calor para la reducción de la resistividad térmica en sistemas industriales
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND190%20%20Divisi%C3%B3n%20de%20l%C3%ADneas%20de%20evaporaci%C3%B3n%20en%20instalaci%C3%B3n%20Ficha%20frigor%C3%ADfica%20centralizada/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND190 División de líneas de evaporación en instalación Ficha frigorífica centralizada
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND190%20ANEXO%20II%20VALORES%20DE%20REFERENCIA%20DE%20LA%20FORMULA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND190 ANEXO II VALORES DE REFERENCIA DE LA FORMULA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND190%20ANEXO%20III%20INFORME%20JUSTIFICATIVO%20DE%20LA%20CENTRAL%20FRIGOR%C3%8DFICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND190 ANEXO III INFORME JUSTIFICATIVO DE LA CENTRAL FRIGORÍFICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND200%20%20Implantaci%C3%B3n%20de%20sistemas%20economizadores%20o%20multietapa%2C%20en%20instalaci%C3%B3n%20frigor%C3%ADfica%20centralizada%20o%20compacta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND200 Implantación de sistemas economizadores o multietapa, en instalación frigorífica centralizada o compacta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    IND200 ANEXO II VALORES DE REFERENCIA DE LA FÓRMULA
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND210%20%20Reducci%C3%B3n%20de%20la%20presi%C3%B3n%20de%20condensaci%C3%B3n%20en%20Ficha%20instalaci%C3%B3n%20frigor%C3%ADfica%20centralizada%20o%20compacta%20por%20cambio%20a%20tecnolog%C3%ADa%20m%C3%A1s%20eficiente/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND210 Reducción de la presión de condensación en Ficha instalación frigorífica centralizada o compacta por cambio a tecnología más eficiente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND210%20ANEXO%20II%20VALORES%20DE%20REFERENCIA%20DE%20LA%20F%C3%93RMULA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND210 ANEXO II VALORES DE REFERENCIA DE LA FÓRMULA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND210%20ANEXO%20III%20INFORME%20JUSTIFICATIVO%20DE%20LA%20CENTRAL%20FRIGOR%C3%8DFICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND210 ANEXO III INFORME JUSTIFICATIVO DE LA CENTRAL FRIGORÍFICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND220%20%20Aumento%20de%20la%20presi%C3%B3n%20de%20evaporaci%C3%B3n%20por%20cambio%20a%20tecnolog%C3%ADa%20m%C3%A1s%20eficiente%20en%20una%20instalaci%C3%B3n%20frigor%C3%ADfica%20centralizada%20o%20compacta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND220 Aumento de la presión de evaporación por cambio a tecnología más eficiente en una instalación frigorífica centralizada o compacta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND220%20ANEXO%20II%20VALORES%20DE%20REFERENCIA%20DE%20LA%20F%C3%93RMULA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND220 ANEXO II VALORES DE REFERENCIA DE LA FÓRMULA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND220%20ANEXO%20III%20INFORME%20JUSTIFICATIVO%20DE%20LA%20CENTRAL%20FRIGOR%C3%8DFICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND220 ANEXO III INFORME JUSTIFICATIVO DE LA CENTRAL FRIGORÍFICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND230%20%20Recuperaci%C3%B3n%20de%20calor%20desde%20procesos%20exot%C3%A9rmicos%20a%20otros%20procesos%20endot%C3%A9rmicos%20de%20la%20misma%20planta/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND230 Recuperación de calor desde procesos exotérmicos a otros procesos endotérmicos de la misma planta
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND230%20ANEXO%20II%20INFORME%20JUSTIFICATIVO%20DE%20LOS%20EQUIPOS%20QUE%20CEDEN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND230 ANEXO II INFORME JUSTIFICATIVO DE LOS EQUIPOS QUE CEDEN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND240%20%20Implantaci%C3%B3n%20de%20variador%20de%20velocidad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND240 Implantación de variador de velocidad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND250%20%20Sustituci%C3%B3n%20total%20o%20parcial%20de%20la%20instalaci%C3%B3n%20Ficha%20t%C3%A9rmica%20por%20tecnolog%C3%ADa%20solar%20t%C3%A9rmica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND250 Sustitución total o parcial de la instalación Ficha térmica por tecnología solar térmica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND260%20%20Sustituci%C3%B3n%20de%20un%20Sistema%20de%20Alimentaci%C3%B3n%20Ficha%20Ininterrumpida%20%28SAI%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND260 Sustitución de un Sistema de Alimentación Ficha Ininterrumpida (SAI)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND260%20ANEXO%20II%20DECLARACI%C3%93N%20RESPONSABLE%20POR%20LA%20EMPRESA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND260 ANEXO II DECLARACIÓN RESPONSABLE POR LA EMPRESA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND270%20%20Sustituci%C3%B3n%20de%20transporte%20neum%C3%A1tico%20de%20s%C3%B3lidos%20Ficha%20por%20sistema%20de%20transporte%20mec%C3%A1nico/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND270 Sustitución de transporte neumático de sólidos Ficha por sistema de transporte mecánico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND280%20%20Sustituci%C3%B3n%20de%20bomba%20por%20otra%20m%C3%A1s%20eficiente/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND280 Sustitución de bomba por otra más eficiente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND280%20ANEXO%20II%20C%C3%81LCULO%20DEL%20RENDIMIENTO%20TOTAL%20DE%20LA%20BOMBA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND280 ANEXO II CÁLCULO DEL RENDIMIENTO TOTAL DE LA BOMBA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../IND290%20%20Recuperaci%C3%B3n%20de%20calor%20en%20circuito%20frigor%C3%ADfico/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND290 Recuperación de calor en circuito frigorífico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Residencial
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Residencial
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES010%20%20Rehabilitaci%C3%B3n%20de%20la%20envolvente%20t%C3%A9rmica%20de%20edificios%20de%20viviendas%20con%20superficie%20afectada%20mayor%20del%2025%20%20por%20ciento/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES010 Rehabilitación de la envolvente térmica de edificios de viviendas con superficie afectada mayor del 25 por ciento
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES010%20ANEXO%20II%20VALORES%20DEL%20COEFICIENTE%20G%20SEG%C3%9AN%20ZONA%20CLIM%C3%81TICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES010 ANEXO II VALORES DEL COEFICIENTE G SEGÚN ZONA CLIMÁTICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES010S/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES010S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES011%20%20Rehabilitaci%C3%B3n%20de%20la%20envolvente%20t%C3%A9rmica%20de%20edificios%20de%20viviendas%20con%20superficie%20afectada%20mayor%20del%2025%20%20por%20ciento%20%28Canarias%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES011 Rehabilitación de la envolvente térmica de edificios de viviendas con superficie afectada mayor del 25 por ciento (Canarias)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES011%20ANEXO%20II%20VALORES%20DEL%20COEFICIENTE%20G%20SEG%C3%9AN%20ZONA%20CLIM%C3%81TICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES011 ANEXO II VALORES DEL COEFICIENTE G SEGÚN ZONA CLIMÁTICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES011S/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES011S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES020%20%20Rehabilitaci%C3%B3n%20de%20la%20parte%20opaca%20de%20la%20envolvente%20t%C3%A9rmica%20de%20edificios%20de%20viviendas%20con%20Ficha%20superficie%20afectada%20inferior%20o%20igual%20al%2025%20%20por%20ciento%20de%20la%20envolvente%20t%C3%A9rmica%20final/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES020 Rehabilitación de la parte opaca de la envolvente térmica de edificios de viviendas con Ficha superficie afectada inferior o igual al 25 por ciento de la envolvente térmica final
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES020%20ANEXO%20II%20VALORES%20DEL%20COEFICIENTE%20G%20SEG%C3%9AN%20ZONA%20CLIM%C3%81TICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES020 ANEXO II VALORES DEL COEFICIENTE G SEGÚN ZONA CLIMÁTICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES020S/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES020S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES021%20%20Rehabilitaci%C3%B3n%20de%20la%20parte%20opaca%20de%20la%20envolvente%20t%C3%A9rmica%20de%20edificios%20de%20viviendas%20con%20Ficha%20superficie%20afectada%20inferior%20o%20igual%20al%2025%20%20por%20ciento%20de%20la%20envolvente%20t%C3%A9rmica%20final%20%28Canarias%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES021 Rehabilitación de la parte opaca de la envolvente térmica de edificios de viviendas con Ficha superficie afectada inferior o igual al 25 por ciento de la envolvente térmica final (Canarias)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES021%20ANEXO%20II%20VALORES%20DEL%20COEFICIENTE%20G%20SEG%C3%9AN%20ZONA%20CLIM%C3%81TICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES021 ANEXO II VALORES DEL COEFICIENTE G SEGÚN ZONA CLIMÁTICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES021S/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES021S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES030%20%20Nueva%20implantaci%C3%B3n%2C%20sustituci%C3%B3n%20o%20ampliaci%C3%B3n%20de%20instalaci%C3%B3n%20t%C3%A9rmica%20en%20un%20edificio%20y%20piscina%20con%20tecnolog%C3%ADa%20solar%20t%C3%A9rmica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES030 Nueva implantación, sustitución o ampliación de instalación térmica en un edificio y piscina con tecnología solar térmica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES030S/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES030S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES040%20%20Sistema%20de%20automatizaci%C3%B3n%20y%20control%20para%20Ficha%20viviendas%20y%20edificios%20%28BACS1%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES040 Sistema de automatización y control para Ficha viviendas y edificios (BACS1)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES040%20ANEXO%20II1%20TABLA%20DE%20FACTORES%20DE%20EFICIENCIA%20PARA%20EDIFICIOS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES040 ANEXO II1 TABLA DE FACTORES DE EFICIENCIA PARA EDIFICIOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES040%20ANEXO%20III%20DECLARACI%C3%93N%20RESPONSABLE%20DE%20LA%20EVALUACI%C3%93N%20DE%20LA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES040 ANEXO III DECLARACIÓN RESPONSABLE DE LA EVALUACIÓN DE LA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES040S/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES040S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES050%20%20Adquisici%C3%B3n%20de%20frigor%C3%ADficos%20de%20alta%20eficiencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES050 Adquisición de frigoríficos de alta eficiencia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES050%20ANEXO%20II%20TABLAS%20CON%20VALORES%20DE%20REFERENCIA%20CONSUMOS%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES050 ANEXO II TABLAS CON VALORES DE REFERENCIA CONSUMOS DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES050S/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES050S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES051%20%20Adquisici%C3%B3n%20de%20frigor%C3%ADfico-congelador%20de%20alta%20Ficha%20eficiencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES051 Adquisición de frigorífico-congelador de alta Ficha eficiencia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES051%20ANEXO%20II%20TABLAS%20CON%20VALORES%20DE%20REFERENCIA%20CONSUMOS%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES051 ANEXO II TABLAS CON VALORES DE REFERENCIA CONSUMOS DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES051S/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES051S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES052%20%20Adquisici%C3%B3n%20de%20congelador%20de%20alta%20eficiencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES052 Adquisición de congelador de alta eficiencia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES052%20ANEXO%20II%20TABLAS%20CON%20VALORES%20DE%20REFERENCIA%20CONSUMOS%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES052 ANEXO II TABLAS CON VALORES DE REFERENCIA CONSUMOS DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES052S/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES052S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES053%20%20Adquisici%C3%B3n%20de%20lavadoras%20de%20alta%20eficiencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES053 Adquisición de lavadoras de alta eficiencia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES053%20ANEXO%20II%20TABLAS%20CON%20VALORES%20DE%20REFERENCIA%20CONSUMOS%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES053 ANEXO II TABLAS CON VALORES DE REFERENCIA CONSUMOS DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES053S/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES053S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES054%20%20Adquisici%C3%B3n%20de%20lavavajillas%20de%20alta%20eficiencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES054 Adquisición de lavavajillas de alta eficiencia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES054%20ANEXO%20II%20TABLAS%20CON%20VALORES%20DE%20REFERENCIA%20CONSUMOS%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES054 ANEXO II TABLAS CON VALORES DE REFERENCIA CONSUMOS DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES054S/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES054S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES060%20%20Sustituci%C3%B3n%20de%20caldera%20de%20combusti%C3%B3n%20por%20una%20Ficha%20bomba%20de%20calor%20de%20accionamiento%20el%C3%A9ctrico/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES060 Sustitución de caldera de combustión por una Ficha bomba de calor de accionamiento eléctrico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES060%20ANEXO%20II%20CASOS%20DONDE%20LA%20CALDERA%20DE%20COMBUSTI%C3%93N%20SE%20MANTIENE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES060 ANEXO II CASOS DONDE LA CALDERA DE COMBUSTIÓN SE MANTIENE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES060%20ANEXO%20III%20EQUIVALENCIAS%20CLIMAS%20CTE%20Y%20ZONAS%20CLIM%C3%81TICAS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES060 ANEXO III EQUIVALENCIAS CLIMAS CTE Y ZONAS CLIMÁTICAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES060%20ANEXO%20IV%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES060 ANEXO IV FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES060%20ANEXO%20V%20DOCUMENTACI%C3%93N%20T%C3%89CNICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES060 ANEXO V DOCUMENTACIÓN TÉCNICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES060%20ANEXO%20VI%20CONDICIONES%20CONSIDERADAS%20EN%20ACS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES060 ANEXO VI CONDICIONES CONSIDERADAS EN ACS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES060S/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES060S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES070%20%20Renovaci%C3%B3n%20o%20sustituci%C3%B3n%20de%20ventanas%20en%20Ficha%20edificios%20de%20viviendas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES070 Renovación o sustitución de ventanas en Ficha edificios de viviendas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES070%20ANEXO%20II%20VALORES%20DEL%20COEFICIENTE%20G%20SEG%C3%9AN%20ZONA%20CLIM%C3%81TICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES070 ANEXO II VALORES DEL COEFICIENTE G SEGÚN ZONA CLIMÁTICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES070S/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES070S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES071%20%20Renovaci%C3%B3n%20o%20sustituci%C3%B3n%20de%20ventanas%20en%20Ficha%20edificios%20de%20viviendas%20%28Canarias%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES071 Renovación o sustitución de ventanas en Ficha edificios de viviendas (Canarias)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES071%20ANEXO%20II%20VALORES%20DE%20COEFICIENTE%20G%20SEG%C3%9AN%20ZONA%20CLIM%C3%81TICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES071 ANEXO II VALORES DE COEFICIENTE G SEGÚN ZONA CLIMÁTICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES071S/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES071S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES080%20%20Rehabilitaci%C3%B3n%20profunda%20de%20edificios%20de%20Ficha%20viviendas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES080 Rehabilitación profunda de edificios de Ficha viviendas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES080S/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES080S
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES090%20%20Hibridaci%C3%B3n%20en%20modo%20paralelo%20de%20caldera%20s%20de%20combusti%C3%B3n%20con%20bomba%20de%20calor%20de%20accionamiento%20Ficha%20el%C3%A9ctrico%20en%20edificios%20residenciales%20ubicados%20en%20la%20zona%20clim%C3%A1tica%20A3%20o%20A4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES090 Hibridación en modo paralelo de caldera s de combustión con bomba de calor de accionamiento Ficha eléctrico en edificios residenciales ubicados en la zona climática A3 o A4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES090%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES090 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES090%20ANEXO%20III%20TABLA%20DE%20COEFICIENTES1%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES090 ANEXO III TABLA DE COEFICIENTES1 DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES091%20%20Hibridaci%C3%B3n%20en%20modo%20paralelo%20de%20caldera%20s%20de%20combusti%C3%B3n%20con%20bomba%20de%20calor%20de%20accionamiento%20Ficha%20el%C3%A9ctrico%20en%20edificios%20residenciales%20ubicados%20en%20la%20zona%20clim%C3%A1tica%20B3%20o%20B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES091 Hibridación en modo paralelo de caldera s de combustión con bomba de calor de accionamiento Ficha eléctrico en edificios residenciales ubicados en la zona climática B3 o B4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES091%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES091 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES091%20ANEXO%20III%20TABLA%20DE%20COEFICIENTES1%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES091 ANEXO III TABLA DE COEFICIENTES1 DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES092%20%20Hibridaci%C3%B3n%20en%20modo%20paralelo%20de%20caldera%20s%20de%20combusti%C3%B3n%20con%20bomba%20de%20calor%20de%20accionamiento%20Ficha%20el%C3%A9ctrico%20en%20edificios%20residenciales%20ubicados%20en%20la%20zona%20clim%C3%A1tica%20C1%2C%20C2%2C%20C3%20o%20C4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES092 Hibridación en modo paralelo de caldera s de combustión con bomba de calor de accionamiento Ficha eléctrico en edificios residenciales ubicados en la zona climática C1, C2, C3 o C4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES092%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES092 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES092%20ANEXO%20III%20TABLA%20DE%20COEFICIENTES1%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES092 ANEXO III TABLA DE COEFICIENTES1 DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES093%20%20Hibridaci%C3%B3n%20en%20modo%20paralelo%20de%20caldera%20s%20de%20combusti%C3%B3n%20con%20bomba%20de%20calor%20de%20accionamiento%20Ficha%20el%C3%A9ctrico%20en%20edificios%20residenciales%20ubicados%20en%20la%20zona%20clim%C3%A1tica%20D1%2C%20D2%20o%20D3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES093 Hibridación en modo paralelo de caldera s de combustión con bomba de calor de accionamiento Ficha eléctrico en edificios residenciales ubicados en la zona climática D1, D2 o D3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES093%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES093 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES093%20ANEXO%20III%20TABLA%20DE%20COEFICIENTES1%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES093 ANEXO III TABLA DE COEFICIENTES1 DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES094%20%20Hibridaci%C3%B3n%20en%20modo%20paralelo%20de%20caldera%20s%20de%20combusti%C3%B3n%20con%20bomba%20de%20calor%20de%20accionamiento%20Ficha%20el%C3%A9ctrico%20en%20edificios%20residenciales%20ubicados%20en%20la%20zona%20clim%C3%A1tica%20E1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES094 Hibridación en modo paralelo de caldera s de combustión con bomba de calor de accionamiento Ficha eléctrico en edificios residenciales ubicados en la zona climática E1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES094%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES094 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES094%20ANEXO%20III%20TABLA%20DE%20COEFICIENTES1%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES094 ANEXO III TABLA DE COEFICIENTES1 DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES095%20%20Hibridaci%C3%B3n%20en%20modo%20alternativo%20de%20caldera%20s%20de%20combusti%C3%B3n%20con%20bomba%20de%20calor%20de%20accionamiento%20Ficha%20el%C3%A9ctrico%20en%20edificios%20residenciales%20ubicados%20en%20la%20zona%20clim%C3%A1tica%20A3%20o%20A4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES095 Hibridación en modo alternativo de caldera s de combustión con bomba de calor de accionamiento Ficha eléctrico en edificios residenciales ubicados en la zona climática A3 o A4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES095%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES095 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES095%20ANEXO%20III%20TABLA%20DE%20COEFICIENTES%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES095 ANEXO III TABLA DE COEFICIENTES DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES096%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES096 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES096%20ANEXO%20III%20TABLA%20DE%20COEFICIENTES%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES096 ANEXO III TABLA DE COEFICIENTES DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES096/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES096
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES097%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES097 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES097%20ANEXO%20III%20TABLA%20DE%20COEFICIENTES%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES097 ANEXO III TABLA DE COEFICIENTES DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES097/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES097
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES098%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES098 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES098%20ANEXO%20III%20TABLA%20DE%20COEFICIENTES%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES098 ANEXO III TABLA DE COEFICIENTES DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES098/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES098
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES099%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES099 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES099%20ANEXO%20III%20TABLA%20DE%20COEFICIENTES%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES099 ANEXO III TABLA DE COEFICIENTES DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES099/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES099
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES210%20ANEXO%20II%20RENDIMIENTO%20DE%20CALDERA%20SUSTITUIDA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES210 ANEXO II RENDIMIENTO DE CALDERA SUSTITUIDA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES210/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES210
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES220%20ANEXO%20II%20FACTORES%20PARA%20EL%20C%C3%81LCULO%20DEL%20AHORRO%20DE%20ENERG%C3%8DA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES220 ANEXO II FACTORES PARA EL CÁLCULO DEL AHORRO DE ENERGÍA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES220/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES220
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES230%20ANEXO%20II%20FACTORES%20PARA%20EL%20C%C3%81LCULO%20DEL%20AHORRO%20DE%20ENERG%C3%8DA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES230 ANEXO II FACTORES PARA EL CÁLCULO DEL AHORRO DE ENERGÍA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Residencial/RES230/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RES230
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_4" id="__nav_1_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Terciario
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Terciario
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER%20190%20%20Reformado%20de%20aparatos%20de%20refrigeraci%C3%B3n%20para%20Ficha%20alimentos%20y%20bebidas%20de%20venta%20directa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER 190 Reformado de aparatos de refrigeración para Ficha alimentos y bebidas de venta directa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER010%20%20Rehabilitaci%C3%B3n%20de%20la%20envolvente%20t%C3%A9rmica%20de%20edificios%20terciarios%20existentes%20con%20superficie%20afectada%20mayor%20del%2025%20por%20ciento/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER010 Rehabilitación de la envolvente térmica de edificios terciarios existentes con superficie afectada mayor del 25 por ciento
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER010%20ANEXO%20II%20VALORES%20DEL%20COEFICIENTE%20G%20SEG%C3%9AN%20ZONA%20CLIM%C3%81TICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER010 ANEXO II VALORES DEL COEFICIENTE G SEGÚN ZONA CLIMÁTICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER011%20%20Rehabilitaci%C3%B3n%20de%20la%20envolvente%20t%C3%A9rmica%20de%20edificios%20terciarios%20existentes%20con%20superficie%20afectada%20mayor%20del%2025%20por%20ciento%20%28Canarias%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER011 Rehabilitación de la envolvente térmica de edificios terciarios existentes con superficie afectada mayor del 25 por ciento (Canarias)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER011%20ANEXO%20II%20VALORES%20DEL%20COEFICIENTE%20G%20SEG%C3%9AN%20ZONA%20CLIM%C3%81TICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER011 ANEXO II VALORES DEL COEFICIENTE G SEGÚN ZONA CLIMÁTICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER020%20%20Rehabilitaci%C3%B3n%20de%20la%20parte%20opaca%20de%20la%20envolvente%20t%C3%A9rmica%20de%20edificios%20terciarios%20con%20superficie%20afectada%20inferior%20o%20igual%20del%2025%20%20por%20ciento%20de%20la%20envolvente%20t%C3%A9rmica%20final/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER020 Rehabilitación de la parte opaca de la envolvente térmica de edificios terciarios con superficie afectada inferior o igual del 25 por ciento de la envolvente térmica final
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER020%20ANEXO%20II%20VALORES%20DEL%20COEFICIENTE%20G%20SEG%C3%9AN%20ZONA%20CLIM%C3%81TICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER020 ANEXO II VALORES DEL COEFICIENTE G SEGÚN ZONA CLIMÁTICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER021%20%20Rehabilitaci%C3%B3n%20de%20la%20parte%20opaca%20de%20la%20envolvente%20t%C3%A9rmica%20de%20edificios%20terciarios%20con%20superficie%20afectada%20Ficha%20inferior%20o%20igual%20del%2025%20%20por%20ciento%20de%20la%20envolvente%20t%C3%A9rmica%20final%20%28Canarias%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER021 Rehabilitación de la parte opaca de la envolvente térmica de edificios terciarios con superficie afectada Ficha inferior o igual del 25 por ciento de la envolvente térmica final (Canarias)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER021%20ANEXO%20II%20VALORES%20DEL%20COEFICIENTE%20G%20SEG%C3%9AN%20ZONA%20CLIM%C3%81TICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER021 ANEXO II VALORES DEL COEFICIENTE G SEGÚN ZONA CLIMÁTICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER030%20%20Sustituci%C3%B3n%20del%20sistema%20de%20iluminaci%C3%B3n%20por%20Ficha%20sistema%20con%20fuentes%20luminosas%20y%20o%20luminarias%20tipo%20LED/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER030 Sustitución del sistema de iluminación por Ficha sistema con fuentes luminosas y o luminarias tipo LED
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER030%20ANEXO%20II%20TIEMPO%20ANUAL%20DE%20FUNCIONAMIENTO%20DEL%20SISTEMA%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER030 ANEXO II TIEMPO ANUAL DE FUNCIONAMIENTO DEL SISTEMA DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER040%20%20Sustituci%C3%B3n%20de%20generador%20de%20climatizaci%C3%B3n%20por%20Ficha%20bomba%20de%20calor%20de%20accionamiento%20el%C3%A9ctrico/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER040 Sustitución de generador de climatización por Ficha bomba de calor de accionamiento eléctrico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER040%20ANEXO%20II%20C%C3%81LCULO%20DEL%20RENDIMIENTO%20ESTACIONAL%20DE%20EQUIPOS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER040 ANEXO II CÁLCULO DEL RENDIMIENTO ESTACIONAL DE EQUIPOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER040%20ANEXO%20III%20EQUIVALENCIAS%20CLIMAS%20CTE%20Y%20ZONAS%20CLIM%C3%81TICAS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER040 ANEXO III EQUIVALENCIAS CLIMAS CTE Y ZONAS CLIMÁTICAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER040%20ANEXO%20IV%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER040 ANEXO IV FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER040%20ANEXO%20IX%20CONDICIONES%20DE%20TEMPERATURA%20EXTERIOR%20%28MEDIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER040 ANEXO IX CONDICIONES DE TEMPERATURA EXTERIOR (MEDIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER040%20ANEXO%20V%20DOCUMENTACI%C3%93N%20T%C3%89CNICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER040 ANEXO V DOCUMENTACIÓN TÉCNICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER040%20ANEXO%20VI%20C%C3%81LCULO%20DE%20LA%20DEMANDA%20DE%20ACS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER040 ANEXO VI CÁLCULO DE LA DEMANDA DE ACS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER040%20ANEXO%20VII%20CONDICIONES%20CONSIDERADAS%20EN%20ACS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER040 ANEXO VII CONDICIONES CONSIDERADAS EN ACS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER040%20ANEXO%20VIII%20CONDICIONES%20GENERALES%20PARA%20C%C3%81LCULO%20DEL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER040 ANEXO VIII CONDICIONES GENERALES PARA CÁLCULO DEL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER050%20%20Sistema%20de%20automatizaci%C3%B3n%20y%20control%20para%20Ficha%20edificios%20del%20sector%20terciario%20%28BACS1%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER050 Sistema de automatización y control para Ficha edificios del sector terciario (BACS1)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER050%20ANEXO%20II1%20TABLA%20DE%20FACTORES%20DE%20EFICIENCIA%20PARA%20EDIFICIOS%20NO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER050 ANEXO II1 TABLA DE FACTORES DE EFICIENCIA PARA EDIFICIOS NO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER050%20ANEXO%20III%20DECLARACI%C3%93N%20RESPONSABLE%20DE%20LA%20EVALUACI%C3%93N%20DE%20LA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER050 ANEXO III DECLARACIÓN RESPONSABLE DE LA EVALUACIÓN DE LA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER060%20%20Renovaci%C3%B3n%20o%20sustituci%C3%B3n%20de%20ventanas%20en%20Ficha%20edificios%20terciarios%20existentes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER060 Renovación o sustitución de ventanas en Ficha edificios terciarios existentes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER060%20ANEXO%20II%20VALORES%20DEL%20COEFICIENTE%20G%20SEG%C3%9AN%20ZONA%20CLIM%C3%81TICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER060 ANEXO II VALORES DEL COEFICIENTE G SEGÚN ZONA CLIMÁTICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER061%20%20Renovaci%C3%B3n%20o%20sustituci%C3%B3n%20de%20ventanas%20en%20Ficha%20edificios%20existentes%20%28Canarias%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER061 Renovación o sustitución de ventanas en Ficha edificios existentes (Canarias)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER061%20ANEXO%20II%20VALORES%20DEL%20COEFICIENTE%20G%20SEG%C3%9AN%20ZONA%20CLIM%C3%81TICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER061 ANEXO II VALORES DEL COEFICIENTE G SEGÚN ZONA CLIMÁTICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER070%20%20Nueva%20implantaci%C3%B3n%2C%20sustituci%C3%B3n%20o%20ampliaci%C3%B3n%20de%20instalaci%C3%B3n%20t%C3%A9rmica%20en%20un%20edificio%20y%20piscina%20con%20tecnolog%C3%ADa%20solar%20t%C3%A9rmica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER070 Nueva implantación, sustitución o ampliación de instalación térmica en un edificio y piscina con tecnología solar térmica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER080%20%20Rehabilitaci%C3%B3n%20profunda%20de%20un%20edificio%20terciario%20Ficha%20existente/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER080 Rehabilitación profunda de un edificio terciario Ficha existente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER090%20%20Sustituci%C3%B3n%20del%20refrigerante%20de%20una%20instalaci%C3%B3n%20Ficha%20frigor%C3%ADfica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER090 Sustitución del refrigerante de una instalación Ficha frigorífica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER090%20ANEXO%20II%20TABLAS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER090 ANEXO II TABLAS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER090%20ANEXO%20III%20NOTA%20INFORMATIVA%20ACERCA%20DE%20LA%20SUSTITUCI%C3%93N%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER090 ANEXO III NOTA INFORMATIVA ACERCA DE LA SUSTITUCIÓN DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER100%20%20Sustituci%C3%B3n%20de%20caldera%20de%20combusti%C3%B3n%20existente%20Ficha%20por%20bomba%20de%20calor%20de%20accionamiento%20el%C3%A9ctrico/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER100 Sustitución de caldera de combustión existente Ficha por bomba de calor de accionamiento eléctrico
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER100%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER100 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER100%20ANEXO%20III%20DOCUMENTACI%C3%93N%20T%C3%89CNICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER100 ANEXO III DOCUMENTACIÓN TÉCNICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER100%20ANEXO%20IV%20CONDICIONES%20CONSIDERADAS%20EN%20ACS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER100 ANEXO IV CONDICIONES CONSIDERADAS EN ACS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER100%20ANEXO%20V%20C%C3%81LCULO%20DE%20LA%20DEMANDA%20DE%20ACS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER100 ANEXO V CÁLCULO DE LA DEMANDA DE ACS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER100%20ANEXO%20VI%20CONDICIONES%20GENERALES%20PARA%20C%C3%81LCULO%20DE%20LA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER100 ANEXO VI CONDICIONES GENERALES PARA CÁLCULO DE LA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER100%20ANEXO%20VII%20CONDICIONES%20DE%20TEMPERATURA%20EXTERIOR%20%28MEDIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER100 ANEXO VII CONDICIONES DE TEMPERATURA EXTERIOR (MEDIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER100%20ANEXO%20VIII%20RENDIMIENTO%20DE%20CALDERA%20SUSTITUIDA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER100 ANEXO VIII RENDIMIENTO DE CALDERA SUSTITUIDA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER110%20%20Sustituci%C3%B3n%20de%20compresor%20para%20instalaci%C3%B3n%20Ficha%20frigor%C3%ADfica%20o%20de%20climatizaci%C3%B3n/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER110 Sustitución de compresor para instalación Ficha frigorífica o de climatización
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER110%20ANEXO%20II%20VALORES%20DE%20REFERENCIA%20DE%20LA%20F%C3%93RMULA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER110 ANEXO II VALORES DE REFERENCIA DE LA FÓRMULA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER120%20%20Sustituci%C3%B3n%20de%20quemador%20modulante%20de%20caldera%20Ficha%20de%20combusti%C3%B3n%20de%20gas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER120 Sustitución de quemador modulante de caldera Ficha de combustión de gas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER140%20%20Reforma%2C%20sustituci%C3%B3n%20o%20nueva%20instalaci%C3%B3n%20de%20Ficha%20planta%20enfriadora%20de%20procesos%20de%20alta%20eficiencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER140 Reforma, sustitución o nueva instalación de Ficha planta enfriadora de procesos de alta eficiencia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER140%20ANEXO%20II%20VALORES%20DE%20REFERENCIA%20DE%20LA%20F%C3%93RMULA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER140 ANEXO II VALORES DE REFERENCIA DE LA FÓRMULA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER140%20ANEXO%20III%20INFORME%20JUSTIFICATIVO%20DE%20LA%20CENTRAL%20FRIGOR%C3%8DFICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER140 ANEXO III INFORME JUSTIFICATIVO DE LA CENTRAL FRIGORÍFICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER150%20%20Reforma%2C%20sustituci%C3%B3n%20o%20nueva%20instalaci%C3%B3n%20de%20central%20frigor%C3%ADfica%20de%20alta%20eficiencia%20con%20sistemas%20de%20refrigeraci%C3%B3n%20directa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER150 Reforma, sustitución o nueva instalación de central frigorífica de alta eficiencia con sistemas de refrigeración directa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER150%20ANEXO%20II%20VALORES%20DE%20REFERENCIA%20DE%20LA%20F%C3%93RMULA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER150 ANEXO II VALORES DE REFERENCIA DE LA FÓRMULA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER150%20ANEXO%20III%20INFORME%20JUSTIFICATIVO%20DE%20LA%20CENTRAL%20FRIGOR%C3%8DFICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER150 ANEXO III INFORME JUSTIFICATIVO DE LA CENTRAL FRIGORÍFICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER160%20%20Sustituci%C3%B3n%2C%20reforma%20o%20nueva%20instalaci%C3%B3n%20de%20una%20Ficha%20unidad%20condensadora%20de%20alta%20eficiencia/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER160 Sustitución, reforma o nueva instalación de una Ficha unidad condensadora de alta eficiencia
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER160%20ANEXO%20II%20VALORES%20DE%20REFERENCIA%20DE%20LA%20F%C3%93RMULA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER160 ANEXO II VALORES DE REFERENCIA DE LA FÓRMULA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER160%20ANEXO%20III%20INFORME%20JUSTIFICATIVO%20DE%20LA%20CENTRAL%20FRIGOR%C3%8DFICA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER160 ANEXO III INFORME JUSTIFICATIVO DE LA CENTRAL FRIGORÍFICA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER170%20%20Hibridaci%C3%B3n%20en%20modo%20paralelo%20de%20caldera%20s%20de%20combusti%C3%B3n%20con%20bomba%20de%20calor%20de%20accionamiento%20Ficha%20el%C3%A9ctrico%20en%20edificios%20no%20residenciales%20ubicados%20en%20la%20zona%20clim%C3%A1tica%20A3%20o%20A4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER170 Hibridación en modo paralelo de caldera s de combustión con bomba de calor de accionamiento Ficha eléctrico en edificios no residenciales ubicados en la zona climática A3 o A4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER170%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER170 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER170%20ANEXO%20III%20CONDICIONES%20GENERALES%20PARA%20C%C3%81LCULO%20DE%20LA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER170 ANEXO III CONDICIONES GENERALES PARA CÁLCULO DE LA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER170%20ANEXO%20IV%20TABLA%20DE%20COEFICIENTES1%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER170 ANEXO IV TABLA DE COEFICIENTES1 DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER171%20%20Hibridaci%C3%B3n%20en%20modo%20paralelo%20de%20caldera%20s%20de%20combusti%C3%B3n%20con%20bomba%20de%20calor%20de%20accionamiento%20Ficha%20el%C3%A9ctrico%20en%20edificios%20no%20residenciales%20ubicados%20en%20la%20zona%20clim%C3%A1tica%20B3%20o%20B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER171 Hibridación en modo paralelo de caldera s de combustión con bomba de calor de accionamiento Ficha eléctrico en edificios no residenciales ubicados en la zona climática B3 o B4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER171%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER171 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER171%20ANEXO%20III%20CONDICIONES%20GENERALES%20PARA%20C%C3%81LCULO%20DE%20LA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER171 ANEXO III CONDICIONES GENERALES PARA CÁLCULO DE LA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER171%20ANEXO%20IV%20TABLA%20DE%20COEFICIENTES1%20DE%20COBERTURA%20POR/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER171 ANEXO IV TABLA DE COEFICIENTES1 DE COBERTURA POR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER172%20%20Hibridaci%C3%B3n%20en%20modo%20paralelo%20de%20caldera%20s%20de%20combusti%C3%B3n%20con%20bomba%20de%20calor%20de%20accionamiento%20Ficha%20el%C3%A9ctrico%20en%20edificios%20no%20residenciales%20ubicados%20en%20la%20zona%20clim%C3%A1tica%20C1%2C%20C2%2C%20C3%20o%20C4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER172 Hibridación en modo paralelo de caldera s de combustión con bomba de calor de accionamiento Ficha eléctrico en edificios no residenciales ubicados en la zona climática C1, C2, C3 o C4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER172%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER172 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER172%20ANEXO%20III%20CONDICIONES%20GENERALES%20PARA%20C%C3%81LCULO%20DE%20LA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER172 ANEXO III CONDICIONES GENERALES PARA CÁLCULO DE LA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER172%20ANEXO%20IV%20TABLA%20DE%20COEFICIENTES1%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER172 ANEXO IV TABLA DE COEFICIENTES1 DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER173%20%20Hibridaci%C3%B3n%20en%20modo%20paralelo%20de%20caldera%20s%20de%20combusti%C3%B3n%20con%20bomba%20de%20calor%20de%20accionamiento%20Ficha%20el%C3%A9ctrico%20en%20edificios%20no%20residenciales%20ubicados%20en%20la%20zona%20clim%C3%A1tica%20D1%2C%20D2%20o%20D3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER173 Hibridación en modo paralelo de caldera s de combustión con bomba de calor de accionamiento Ficha eléctrico en edificios no residenciales ubicados en la zona climática D1, D2 o D3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER173%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER173 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER173%20ANEXO%20III%20CONDICIONES%20GENERALES%20PARA%20C%C3%81LCULO%20DE%20LA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER173 ANEXO III CONDICIONES GENERALES PARA CÁLCULO DE LA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER173%20ANEXO%20IV%20TABLA%20DE%20COEFICIENTES1%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER173 ANEXO IV TABLA DE COEFICIENTES1 DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER174%20%20Hibridaci%C3%B3n%20en%20modo%20paralelo%20de%20caldera%20s%20de%20combusti%C3%B3n%20con%20bomba%20de%20calor%20de%20accionamiento%20Ficha%20el%C3%A9ctrico%20en%20edificios%20no%20residenciales%20ubicados%20en%20la%20zona%20clim%C3%A1tica%20E1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER174 Hibridación en modo paralelo de caldera s de combustión con bomba de calor de accionamiento Ficha eléctrico en edificios no residenciales ubicados en la zona climática E1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER174%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER174 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER174%20ANEXO%20III%20CONDICIONES%20GENERALES%20PARA%20C%C3%81LCULO%20DE%20LA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER174 ANEXO III CONDICIONES GENERALES PARA CÁLCULO DE LA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER174%20ANEXO%20IV%20TABLA%20DE%20COEFICIENTES1%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER174 ANEXO IV TABLA DE COEFICIENTES1 DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER175%20%20Hibridaci%C3%B3n%20en%20modo%20alternativo%20de%20caldera%20de%20combusti%C3%B3n%20con%20bomba%20de%20calor%20de%20accionamiento%20Ficha%20el%C3%A9ctrico%20en%20edificios%20no%20residenciales%20ubicados%20en%20la%20zona%20clim%C3%A1tica%20A3%20o%20A4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER175 Hibridación en modo alternativo de caldera de combustión con bomba de calor de accionamiento Ficha eléctrico en edificios no residenciales ubicados en la zona climática A3 o A4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER175%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER175 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER175%20ANEXO%20III%20CONDICIONES%20GENERALES%20PARA%20C%C3%81LCULO%20DE%20LA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER175 ANEXO III CONDICIONES GENERALES PARA CÁLCULO DE LA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER175%20ANEXO%20IV%20TABLA%20DE%20COEFICIENTES%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER175 ANEXO IV TABLA DE COEFICIENTES DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER176%20%20Hibridaci%C3%B3n%20en%20modo%20alternativo%20de%20caldera%20s%20de%20combusti%C3%B3n%20con%20bomba%20de%20calor%20de%20accionamiento%20Ficha%20el%C3%A9ctrico%20en%20edificios%20no%20residenciales%20ubicados%20en%20la%20zona%20clim%C3%A1tica%20B3%20o%20B4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER176 Hibridación en modo alternativo de caldera s de combustión con bomba de calor de accionamiento Ficha eléctrico en edificios no residenciales ubicados en la zona climática B3 o B4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER176%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER176 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER176%20ANEXO%20III%20CONDICIONES%20GENERALES%20PARA%20C%C3%81LCULO%20DE%20LA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER176 ANEXO III CONDICIONES GENERALES PARA CÁLCULO DE LA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER176%20ANEXO%20IV%20TABLA%20DE%20COEFICIENTES%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER176 ANEXO IV TABLA DE COEFICIENTES DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER177%20%20Hibridaci%C3%B3n%20en%20modo%20alternativo%20de%20caldera%20s%20de%20combusti%C3%B3n%20con%20bomba%20de%20calor%20de%20accionamiento%20Ficha%20el%C3%A9ctrico%20en%20edificios%20no%20residenciales%20ubicados%20en%20la%20zona%20clim%C3%A1tica%20C1%2C%20C2%2C%20C3%20o%20C4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER177 Hibridación en modo alternativo de caldera s de combustión con bomba de calor de accionamiento Ficha eléctrico en edificios no residenciales ubicados en la zona climática C1, C2, C3 o C4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER177%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER177 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER177%20ANEXO%20III%20CONDICIONES%20GENERALES%20PARA%20C%C3%81LCULO%20DE%20LA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER177 ANEXO III CONDICIONES GENERALES PARA CÁLCULO DE LA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER177%20ANEXO%20IV%20TABLA%20DE%20COEFICIENTES%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER177 ANEXO IV TABLA DE COEFICIENTES DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER178%20%20Hibridaci%C3%B3n%20en%20modo%20alternativo%20de%20caldera%20s%20de%20combusti%C3%B3n%20con%20bomba%20de%20calor%20de%20accionamiento%20Ficha%20el%C3%A9ctrico%20en%20edificios%20no%20residenciales%20ubicados%20en%20la%20zona%20clim%C3%A1tica%20D1%2C%20D2%20o%20D3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER178 Hibridación en modo alternativo de caldera s de combustión con bomba de calor de accionamiento Ficha eléctrico en edificios no residenciales ubicados en la zona climática D1, D2 o D3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER178%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER178 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER178%20ANEXO%20III%20CONDICIONES%20GENERALES%20PARA%20C%C3%81LCULO%20DE%20LA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER178 ANEXO III CONDICIONES GENERALES PARA CÁLCULO DE LA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER178%20ANEXO%20IV%20TABLA%20DE%20COEFICIENTES%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER178 ANEXO IV TABLA DE COEFICIENTES DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER179%20%20Hibridaci%C3%B3n%20en%20modo%20alternativo%20de%20caldera%20s%20de%20combusti%C3%B3n%20con%20bomba%20de%20calor%20de%20accionamiento%20Ficha%20el%C3%A9ctrico%20en%20edificios%20no%20residenciales%20ubicados%20en%20la%20zona%20clim%C3%A1tica%20E1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER179 Hibridación en modo alternativo de caldera s de combustión con bomba de calor de accionamiento Ficha eléctrico en edificios no residenciales ubicados en la zona climática E1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER179%20ANEXO%20II%20F%C3%93RMULAS%20PARA%20OBTENER%20LOS%20COEFICIENTES%20DE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER179 ANEXO II FÓRMULAS PARA OBTENER LOS COEFICIENTES DE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER179%20ANEXO%20III%20CONDICIONES%20GENERALES%20PARA%20C%C3%81LCULO%20DE%20LA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER179 ANEXO III CONDICIONES GENERALES PARA CÁLCULO DE LA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER179%20ANEXO%20IV%20TABLA%20DE%20COEFICIENTES%20DE%20COBERTURA%20POR%20BIVALENCIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER179 ANEXO IV TABLA DE COEFICIENTES DE COBERTURA POR BIVALENCIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER180%20%20Sustituci%C3%B3n%20del%20sistema%20de%20iluminaci%C3%B3n%20vial%20Ficha%20ambiental/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER180 Sustitución del sistema de iluminación vial Ficha ambiental
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER190%20ANEXO%20II%20COEFICIENTES%20DE%20AHORRO%20%28C%20%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER190 ANEXO II COEFICIENTES DE AHORRO (C )
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER200%20%20Sustituci%C3%B3n%20de%20aparato%20de%20refrigeraci%C3%B3n%20con%20Ficha%20funci%C3%B3n%20de%20venta%20directa/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER200 Sustitución de aparato de refrigeración con Ficha función de venta directa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER210%20%20Sustituci%C3%B3n%20de%20calderas%20individuales%20colectiva%20en%20Ficha%20edificio%20terciario%20por%20conexi%C3%B3n%20a%20una%20red%20de%20calor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER210 Sustitución de calderas individuales colectiva en Ficha edificio terciario por conexión a una red de calor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER210%20ANEXO%20II%20RENDIMIENTO%20DE%20CALDERA%20SUSTITUIDA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER210 ANEXO II RENDIMIENTO DE CALDERA SUSTITUIDA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER220%20%20Sustituci%C3%B3n%20de%20un%20sistema%20de%20ventilaci%C3%B3n%20existente%20%28natural%20o%20mec%C3%A1nica%29%2C%20por%20un%20sistema%20de%20Ficha%20ventilaci%C3%B3n%20mec%C3%A1nica%20con%20recuperaci%C3%B3n%20de%20calor%20de%20alta%20eficiencia%20en%20edificios%20no%20residenciales/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER220 Sustitución de un sistema de ventilación existente (natural o mecánica), por un sistema de Ficha ventilación mecánica con recuperación de calor de alta eficiencia en edificios no residenciales
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER220%20ANEXO%20II%20FACTORES%20PARA%20EL%20C%C3%81LCULO%20DEL%20AHORRO%20DE%20ENERG%C3%8DA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER220 ANEXO II FACTORES PARA EL CÁLCULO DEL AHORRO DE ENERGÍA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER240%20%20Implantaci%C3%B3n%20de%20variador%20de%20velocidad/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER240 Implantación de variador de velocidad
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER260%20%20Sustituci%C3%B3n%20de%20un%20Sistema%20de%20Alimentaci%C3%B3n%20Ficha%20Ininterrumpida%20%28SAI%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER260 Sustitución de un Sistema de Alimentación Ficha Ininterrumpida (SAI)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER280%20%20Sustituci%C3%B3n%20de%20bomba%20por%20otra%20m%C3%A1s%20eficiente/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER280 Sustitución de bomba por otra más eficiente
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Terciario/TER280%20ANEXO%20II%20C%C3%81LCULO%20DEL%20RENDIMIENTO%20TOTAL%20DE%20LA%20BOMBA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TER280 ANEXO II CÁLCULO DEL RENDIMIENTO TOTAL DE LA BOMBA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_5" id="__nav_1_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Transporte
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            Transporte
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Transporte/TRA010%20ANEXO%20I%20DECLARACI%C3%93N%20RESPONSABLE%20FORMALIZADA%20POR%20EL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TRA010 ANEXO I DECLARACIÓN RESPONSABLE FORMALIZADA POR EL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Transporte/TRA010%20ANEXO%20II%20AHORRO%20ENERG%C3%89TICO%20POR%20SUSTITUCI%C3%93N%20DE%20NEUM%C3%81TICO%2C/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TRA010 ANEXO II AHORRO ENERGÉTICO POR SUSTITUCIÓN DE NEUMÁTICO,
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Transporte/TRA010%20ANEXO%20III%20KILOMETROS%20REALIZADOS%20SEG%C3%9AN%20LA%20TIPOLOG%C3%8DA%20DEL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TRA010 ANEXO III KILOMETROS REALIZADOS SEGÚN LA TIPOLOGÍA DEL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Transporte/TRA010/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TRA010
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Transporte/TRA030%20%20Veh%C3%ADculo%20compartido%20en%20trayectos%20de%20largo%20Ficha%20recorrido/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TRA030 Vehículo compartido en trayectos de largo Ficha recorrido
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Transporte/TRA030%20ANEXO%20II%20REQUISITOS%20PARA%20LA%20APLICACI%C3%93N%20DE%20LA%20FICHA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TRA030 ANEXO II REQUISITOS PARA LA APLICACIÓN DE LA FICHA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Transporte/TRA030%20ANEXO%20III%20CRITERIOS%20ANTIFRAUDE%20PARA%20LA%20CORRECTA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TRA030 ANEXO III CRITERIOS ANTIFRAUDE PARA LA CORRECTA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Transporte/TRA040%20%20Movilidad%20colaborativa%20urbana%20y%20metropolitana/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TRA040 Movilidad colaborativa urbana y metropolitana
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Transporte/TRA040%20ANEXO%20I%20DECLARACI%C3%93N%20RESPONSABLE%20FORMALIZADA%20POR%20EL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TRA040 ANEXO I DECLARACIÓN RESPONSABLE FORMALIZADA POR EL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Transporte/TRA040%20ANEXO%20II%20REQUISITOS%20PARA%20LA%20APLICACI%C3%93N%20DE%20LA%20FICHA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TRA040 ANEXO II REQUISITOS PARA LA APLICACIÓN DE LA FICHA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Transporte/TRA040%20ANEXO%20III%20CRITERIOS%20ANTIFRAUDE%20PARA%20LA%20CORRECTA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TRA040 ANEXO III CRITERIOS ANTIFRAUDE PARA LA CORRECTA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Transporte/TRA050%20%20Sustituci%C3%B3n%20de%20veh%C3%ADculo%20de%20combusti%C3%B3n%20por%20un%20Ficha%20veh%C3%ADculo%20el%C3%A9ctrico%20puro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TRA050 Sustitución de vehículo de combustión por un Ficha vehículo eléctrico puro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Transporte/TRA050%20ANEXO%20I%20DECLARACI%C3%93N%20RESPONSABLE%20FORMALIZADA%20POR%20EL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TRA050 ANEXO I DECLARACIÓN RESPONSABLE FORMALIZADA POR EL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Transporte/TRA050%20ANEXO%20II%20M%C3%89TODOS%20PARA%20OBTENER%20LOS%20CONSUMOS%20DE%20VEH%C3%8DCULOS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TRA050 ANEXO II MÉTODOS PARA OBTENER LOS CONSUMOS DE VEHÍCULOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Transporte/TRA050%20ANEXO%20III%20KILOMETROS%20REALIZADOS%20SEG%C3%9AN%20LA%20TIPOLOG%C3%8DA%20DEL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TRA050 ANEXO III KILOMETROS REALIZADOS SEGÚN LA TIPOLOGÍA DEL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="ind200-anexo-ii-valores-de-referencia-de-la-formula">IND200 ANEXO II VALORES DE REFERENCIA DE LA FÓRMULA</h1>
+<iframe src="../IND200 ANEXO II VALORES DE REFERENCIA DE LA FÓRMULA.pdf" width="100%" height="1000px"></iframe>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+    <a href="tel:+34 951733491" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64c0 247.4 200.6 448 448 448 18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368c-70.4-33.3-127.4-90.3-160.7-160.7l49.3-40.3c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:ibercae@gmail.com" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m20 8-8 5-8-5V6l8 5 8-5m0-2H4c-1.11 0-2 .89-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+  
+
+
+
+
+
+  
+
+<h4>Consentimiento de Cookies</h4>
+<p>En IberCAE utilizamos cookies para brindarte una experiencia más relevante recordando tus preferencias y visitas anteriores. Al hacer clic en "Aceptar", aceptas el uso de TODAS las cookies.</p>
+<input class="md-toggle" type="checkbox" id="__settings" checked>
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+      
+      
+        
+        
+          
+        
+      
+      <li class="task-list-item">
+        <label class="task-list-control">
+          <input type="checkbox" name="analytics" checked>
+          <span class="task-list-indicator"></span>
+          Google Analytics
+        </label>
+      </li>
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">Aceptar</button>
+    
+    
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">Rechazar</button>
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
+      
+        <script src="../../../js/pdfjs/pdf.mj"></script>
+      
+    
+  </body>
+</html>
