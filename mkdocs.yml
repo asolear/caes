@@ -1,0 +1,77 @@
+site_name: .
+theme:
+  name: material
+  custom_dir: overrides
+  features:
+    - navigation.tabs
+    - toc.integrate 
+  language: es
+plugins:
+  - search
+markdown_extensions:
+  - toc:
+      permalink: true
+extra_javascript:
+  - js/pdfjs/pdf.mj
+extra:
+  generator: false
+  analytics:
+    provider: google
+    property: G-XXXXXXXXX
+  consent:
+    title:  Consentimiento de Cookies
+    description: >- 
+      En IberCAE utilizamos cookies para brindarte una experiencia más relevante recordando tus preferencias y visitas anteriores. Al hacer clic en "Aceptar", aceptas el uso de TODAS las cookies.
+    cookies:
+      analytics:
+        name: Google Analytics
+        checked: true
+    actions:
+      - accept
+      - reject  
+  social:
+    # - icon: fontawesome/brands/whatsapp 
+    #   link: https://api.whatsapp.com/send?phone=xxxxx
+    - icon: fontawesome/solid/phone
+      link: tel:+34 951733491
+    - icon: material/email
+      link: mailto:ibercae@gmail.com
+    # - icon: fontawesome/brands/github
+    #   link: https://github.com/kgnete
+    # - icon: fontawesome/brands/stack-overflow
+    #   link: https://stackoverflow.com/users/3788513/kgnete
+    # - icon: fontawesome/brands/kaggle
+    #   link: https://www.kaggle.com/kgnete
+    # - icon: fontawesome/brands/docker
+    #   link: https://hub.docker.com/u/kgnete
+    # - icon: fontawesome/brands/x-twitter 
+    #   link: https://twitter.com/kgnete
+    # - icon: fontawesome/brands/facebook 
+    #   link: https://www.facebook.com/kgnete
+    # - icon: fontawesome/brands/linkedin 
+    #   link: https://www.linkedin.com/in/k-gnete-590154165/
+    # - icon: fontawesome/brands/instagram 
+    #   link: https://www.instagram.com/kgnete/
+
+markdown_extensions:
+  - meta
+  - tables
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - footnotes
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+

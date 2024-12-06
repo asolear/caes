@@ -1,0 +1,17 @@
+
+# IND150  Central frigorífica de alta eficiencia con sistemas Ficha de refrigeración directa
+
+<a href='../IND150  Central frigorífica de alta eficiencia con sistemas Ficha de refrigeración directa.pdf' download>
+<button class='md-button -primary' 
+id='download-btn' style="position: fixed; top: 10%; right: 20px; 
+        transform: translateY(-50%); z-index: 1000;  border: none; ">
+:fontawesome-solid-file-arrow-down: 
+</button>
+</a>
+
+<div 
+    id='../IND150  Central frigorífica de alta eficiencia con sistemas Ficha de refrigeración directa.pdf' 
+    data-pdf-url='../IND150  Central frigorífica de alta eficiencia con sistemas Ficha de refrigeración directa.pdf'
+    style=' width: 100%; height: auto;overflow: auto;'>
+</div>
+
