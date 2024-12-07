@@ -1,0 +1,59 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+\input{../../../assets/settings/newcommand.tex}
+\usepackage{tikz}
+\usepackage{pgfgantt}
+
+\usepackage{nopageno} % Paquete para desactivar la numeración de páginas
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Resultados Instalacion FV \cite{1}    }
+\subsection*{rwerqwertwq   }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{figure}[h]
+    \centering
+    \begin{ganttchart}[
+        hgrid,
+        vgrid,
+        x unit=0.15cm,
+        y unit chart=0.25cm,
+        time slot format=isodate,
+        title label font=\tiny,
+        bar label font=\tiny,
+        group label font=\small
+        ]{2024-05-19}{2024-07-03}
+    \gantttitlecalendar{year, month=name, week} \\
+    \ganttgroup{Diseño}{2024-05-20}{2024-05-26} \\
+    \ganttbar{Diseño}{2024-05-20}{2024-05-26} \\
+    \ganttgroup{Permisos}{2024-05-27}{2024-05-29} \\
+    \ganttbar{Licencia de Obras}{2024-05-27}{2024-05-29} \\
+    \ganttbar{Acceso y conexion}{2024-05-30}{2024-05-29} \\
+    \ganttgroup{Instalación}{2024-05-30}{2024-06-29} \\
+    \ganttbar{Adquisición de materiales}{2024-05-30}{2024-06-01} \\
+    \ganttbar{Paneles}{2024-06-02}{2024-06-16} \\
+    \ganttbar{Cableado}{2024-06-17}{2024-06-21} \\
+    \ganttbar{Inversores}{2024-06-22}{2024-06-26} \\
+    \ganttbar{Pruebas}{2024-06-27}{2024-06-29} \\
+    \ganttgroup{Legalizacion}{2024-06-30}{2024-07-03} \\
+    \ganttbar{PUES}{2024-06-30}{2024-07-01} \\
+    \ganttbar{Solicitud de Conexion}{2024-07-02}{2024-07-03} \\
+    \end{ganttchart}
+    \caption{Gráficos de programación Gantt}
+    \end{figure}
+
+\begin{thebibliography}{9}
+    \bibitem{1}
+    IDAE. 
+    Instalaciones de
+Energía Solar Fotovoltaica.
+Pliego de Condiciones Técnicas de
+Instalaciones Conectadas a Red
+PCT-C-REV - julio 2011
+
+\end{thebibliography}
+
+
+\end{document}

@@ -1,0 +1,196 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+
+\newcommand{\path}{../../assets/settings}
+\input{\path/newcommand.tex}
+\input{\path/usepackage.tex}
+\input{\path/quitarnumerossecciones.tex}
+
+
+% \usepackage{nopageno} % Paquete para desactivar la numeración de páginas
+
+\title{Resultados Instalacion FV}
+\author{Kgnete}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Distancia mínima entre filas de módulos  }
+\footnote{    IDAE. 
+Instalaciones de
+Energía Solar Fotovoltaica.
+Pliego de Condiciones Técnicas de
+Instalaciones Conectadas a Red
+PCT-C-REV - julio 2011}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Cálculo de Secciones en una Instalación Fotovoltaica con Microinversores}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+    \centering
+
+  
+    \pgfmathsetmacro\pmpt{\placafvpmp/1000*\instalacionnpaneles}
+    \pgfmathsetmacro\pacot{\inversorpni/1000*\instalacionninversores }
+  
+  
+      \begin{forest}
+      for tree={
+          draw,
+          rectangle,
+          align=center,
+          edge={ line width=2.5pt},
+          l sep=2cm, % Longitud de los bordes
+          }
+          [\instalacionnpaneles Modulos FV  de   \placafvpmp W
+          [\instalacionninversores  Inversores de \inversorpni W  ($\frac{DC}{AC}  \equiv 1.4$), edge label={node[midway,right] {\pmpt kW}}
+          [, edge label={node[midway,right] {\pacot kW}}
+          ]]
+      ]
+      \end{forest}
+      
+      \caption{Esquema Electrico Resumen DC}
+  \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \pgfmathsetmacro\vs{\inversorpxc*\placafvvoc}
+% \pgfmathsetmacro\is{\inversorcxs*\placafvisc}
+
+% \begin{tikzpicture}[scale=1, node distance=1cm]
+%     \node[rectangle, draw] (I) at (6,1+\inversorcxs) {$INV_i$};
+
+%     \foreach \seguidor in {1,...,\inversorsxi} {
+%         \node[rectangle, draw] (I_\seguidor) at (4,1+\inversorcxs*\seguidor) {{$MPPT_{i,\seguidor}$}};
+%         \foreach \circuito in {1,...,\inversorcxs} {
+%             \node[rectangle, draw] (FV\seguidor\circuito) at (0,\circuito+\inversorcxs*\seguidor) {{$FV_{i,\seguidor,1,\circuito}$}};
+%             \node[rectangle, draw] (FVn\seguidor\circuito) at (2,\circuito+\inversorcxs*\seguidor) {{$FV_{i,\seguidor,\circuito,\inversorpxc}$}};
+%             \draw[dashed] (FV\seguidor\circuito) -- (FVn\seguidor\circuito) ;
+%             \draw[] (FVn\seguidor\circuito) -- (I_\seguidor) ;
+%         }
+%          \draw[] (I_\seguidor) -- (I);
+%     }
+
+% \end{tikzpicture}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Para calcular las secciones de los conductores en una instalación fotovoltaica con microinversores de 1 kW cada uno y una potencia total de 20 kW, se deben tener en cuenta varios factores, tales como la corriente máxima, la distancia de los conductores y las normativas locales. A continuación, se presentan los pasos generales para el cálculo tanto en corriente continua (CC) como en corriente alterna (CA).
+
+\subsubsection{Datos Iniciales}
+\begin{itemize}
+    \item Potencia total: 20 kW
+    \item Potencia de cada microinversor: 1 kW
+    \item Número de microinversores: 20 (20 kW / 1 kW por microinversor)
+    \item Cada microinversor tiene 2 MPPT (Maximum Power Point Tracker)
+\end{itemize}
+
+\subsubsection{Cálculo en Corriente Continua (CC)}
+
+En el lado de corriente continua, se encuentran los paneles solares antes de los microinversores.
+
+\uline{Paso 1: Determinar la Corriente de los Paneles Solares}
+
+Supongamos que cada panel solar tiene una tensión de operación de 40 V y una corriente de 10 A (estos valores pueden variar dependiendo del panel específico).
+
+\uline{Paso 2: Agrupación de Paneles}
+
+Si cada microinversor tiene 2 MPPT, y cada MPPT maneja un conjunto de paneles, necesitamos conocer la configuración específica de los paneles conectados a cada MPPT. Suponiendo una configuración típica donde cada MPPT maneja una cadena de 5 paneles en serie, la tensión total por cadena sería \(5 \times 40 \text{ V} = 200 \text{ V}\).
+
+Cada cadena de paneles maneja 10 A, y como hay dos cadenas por microinversor, cada microinversor manejaría 10 A por MPPT en CC.
+
+\uline{Paso 3: Calcular la Sección del Conductor en CC}
+
+Utilizando la fórmula:
+
+$$
+S = \frac{2 \cdot L \cdot I}{\sigma \cdot U_{\text{adm}}}
+$$
+
+donde:
+\begin{itemize}
+    \item \(S\) es la sección del conductor en mm²,
+    \item \(L\) es la longitud del conductor en metros,
+    \item \(I\) es la corriente en amperios (10 A en este caso),
+    \item \(\sigma\) es la conductividad del material (para cobre es 56 S/m·mm²),
+    \item $U_{adm}$ es la caída de tensión admisible (normalmente se toma 1-3\%).
+\end{itemize}
+
+Para una longitud de 30 metros y una caída de tensión admisible del 1\%, calculamos:
+
+$$
+S = \frac{2 \cdot 30 \cdot 10}{56 \cdot 0.01 \cdot 200} \approx 0.54 \text{ mm}^2
+$$
+
+Por normativa y seguridad, normalmente se sobredimensionan los conductores. En este caso, se podría utilizar una sección de 1.5 mm² o 2.5 mm², dependiendo de las regulaciones locales.
+
+\subsubsection{Cálculo en Corriente Alterna (CA)}
+
+En el lado de corriente alterna, se encuentran los microinversores conectados a la red.
+
+\uline{Paso 1: Determinar la Corriente en el Lado de CA}
+
+La potencia total es 20 kW, y suponiendo una tensión de red de 230 V (monofásica) o 400 V (trifásica), calculamos la corriente.
+
+Para sistema trifásico:
+
+$$
+I = \frac{P}{\sqrt{3} \cdot V \cdot \cos\phi}
+$$
+
+donde:
+\begin{itemize}
+    \item \(P\) es la potencia total (20,000 W),
+    \item \(V\) es la tensión (400 V),
+    \item \(\cos\phi\) es el factor de potencia (suponiendo 0.95).
+\end{itemize}
+
+$$
+I = \frac{20000}{\sqrt{3} \cdot 400 \cdot 0.95} \approx 30.4 \text{ A}
+$$
+
+\uline{Paso 2: Calcular la Sección del Conductor en CA}
+
+Utilizando la fórmula similar a la de CC, pero adaptada a CA:
+
+$$
+S = \frac{2 \cdot L \cdot I}{\sigma \cdot U_{\text{adm} \cdot \cos\phi}}
+$$
+
+Para una longitud de 30 metros y una caída de tensión admisible del 1\%:
+
+$$
+S = \frac{2 \cdot 30 \cdot 30.4}{56 \cdot 0.01 \cdot 400 \cdot 0.95} \approx 2.9 \text{ mm}^2
+$$
+
+Por normativa y seguridad, se recomendaría utilizar una sección de 6 mm² o 10 mm², dependiendo de las regulaciones locales y las condiciones específicas de la instalación.
+
+\subsubsection{Resumen}
+
+\begin{itemize}
+    \item \textbf{Sección en CC}: Aproximadamente 2.5 mm², pero usualmente se usa una sección mayor por seguridad (4 mm²).
+    \item \textbf{Sección en CA}: Aproximadamente 6 mm², pero se recomienda 10 mm² por normativa y condiciones específicas.
+\end{itemize}
+
+Es importante consultar las normativas locales y, de ser necesario, ajustar estos cálculos considerando factores adicionales como la temperatura, el tipo de aislamiento del conductor y otros factores específicos de la instalación.
+
+
+\ifdefined\inputado % para que no meta la bibliografia de los parciales al inclustarlo con input en otro
+\else
+\bibliographystyle{plainnat}
+\bibliography{\path/referencias}
+\fi
+
+
+
+\end{document}
+

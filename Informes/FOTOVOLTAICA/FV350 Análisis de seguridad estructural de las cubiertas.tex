@@ -1,0 +1,102 @@
+
+\documentclass{article}
+\newcommand{\path}{../../assets/settings}
+\input{\path/newcommand.tex}
+\input{\path/usepackage.tex}
+\input{\path/quitarnumerossecciones.tex}
+% \usepackage{nopageno} % Paquete para desactivar la numeración de páginas
+\title{Análisis de seguridad estructural de
+las cubiertas. Cálculo de los contrapesos de las
+instalaciones fotovoltaicas \footnote{analisis} }
+\author{Kgnete}
+\date{\today}
+\begin{document}
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Análisis de seguridad estructural}
+
+% \subsection{Evaluación Inicial}
+\subsubsection*{Introduccion}
+    El análisis de seguridad estructural de las cubiertas con paneles fotovoltaicos es un proceso complejo que requiere una evaluación detallada de la estructura existente, un análisis riguroso de las nuevas cargas introducidas, y la posible implementación de refuerzos. Utilizando herramientas avanzadas de modelado y simulación, y asegurando el cumplimiento de las normativas locales, se puede garantizar que la adición de paneles fotovoltaicos sea segura y eficaz sin comprometer la integridad del edificio.
+
+    % El presente documento, que no tiene carácter obligatorio, pretende dar un ejemplo del contenido mínimo de los Convenios CAE. Las partes pueden desarrollarlo y adaptarlo según sus necesidades.
+\subsubsection*{Inspección Visual}
+\begin{itemize}
+    \item \textbf{Condición de la estructura existente:} Evaluar el estado actual del techo, incluyendo signos de desgaste, corrosión o daños estructurales.
+    \item \textbf{Materiales de construcción:} Identificar los materiales de la cubierta y la estructura subyacente (madera, acero, hormigón, etc.).
+\end{itemize}
+
+\subsubsection*{Revisión Documental}
+\begin{itemize}
+    \item \textbf{Planos estructurales:} Revisar los planos originales del edificio para entender el diseño y las especificaciones estructurales.
+    \item \textbf{Códigos y normativas:} Asegurarse de que el diseño cumpla con los códigos de construcción locales y las normativas específicas para instalaciones fotovoltaicas.
+\end{itemize}
+
+\subsection*{Análisis de Cargas}
+
+\subsubsection*{Cargas Adicionales}
+\begin{itemize}
+    \item \textbf{Peso de los paneles fotovoltaicos:} Incluir el peso de los paneles, los marcos de soporte, y otros componentes del sistema.
+    \item \textbf{Equipos adicionales:} Considerar el peso de inversores, cables, y otros equipos asociados.
+\end{itemize}
+
+\subsubsection*{Cargas Combinadas}
+\begin{itemize}
+    \item \textbf{Carga muerta:} Peso propio de la estructura del techo y cualquier acabado permanente.
+    \item \textbf{Carga viva:} Peso de la nieve, mantenimiento y otras cargas temporales.
+    \item \textbf{Carga de viento:} Evaluar cómo los paneles pueden afectar la carga de viento sobre la estructura. De acuerdo con ASCE (2022), los ensayos del túnel del viento permiten calcular los contrapesos necesarios en cada panel para asegurar la estabilidad del sistema \cite{idaepctcon}.
+    \item \textbf{Carga sísmica:} En áreas propensas a terremotos, considerar cómo los paneles pueden influir en la respuesta sísmica del edificio.
+\end{itemize}
+
+\subsection*{Modelado y Simulación}
+
+\subsubsection*{Modelado Estructural}
+\begin{itemize}
+    \item \textbf{Software de análisis estructural:} Utilizar programas como SAP2000, ETABS, o ANSYS para modelar la estructura del techo con los paneles fotovoltaicos.
+    \item \textbf{Elementos finitos:} Crear un modelo de elementos finitos para una simulación precisa de las cargas y las respuestas estructurales.
+\end{itemize}
+
+\subsubsection*{Simulación de Cargas}
+\begin{itemize}
+    \item \textbf{Análisis estático y dinámico:} Realizar análisis tanto estáticos como dinámicos para entender cómo las cargas afectan la estructura.
+    \item \textbf{Evaluación de puntos críticos:} Identificar las áreas de mayor esfuerzo y verificar que las tensiones y deformaciones estén dentro de los límites aceptables.
+\end{itemize}
+
+\subsection*{Refuerzo y Adaptación}
+
+\subsubsection*{Necesidad de Refuerzos}
+\begin{itemize}
+    \item \textbf{Evaluación de capacidad:} Comparar la capacidad estructural existente con las nuevas demandas de carga.
+    \item \textbf{Diseño de refuerzos:} Si es necesario, diseñar refuerzos estructurales como vigas adicionales, refuerzos de conexión, o refuerzos de la cubierta.
+\end{itemize}
+
+\subsubsection*{Implementación de Refuerzos}
+\begin{itemize}
+    \item \textbf{Materiales y técnicas:} Seleccionar materiales y técnicas de refuerzo adecuadas que no comprometan la funcionalidad de la cubierta ni interfieran con la instalación de los paneles.
+    \item \textbf{Inspección y aprobación:} Realizar inspecciones durante y después de la implementación de los refuerzos para asegurar la conformidad con el diseño estructural.
+\end{itemize}
+
+\subsection*{Consideraciones Adicionales}
+
+\subsubsection*{Mantenimiento y Monitoreo}
+\begin{itemize}
+    \item \textbf{Plan de mantenimiento:} Establecer un plan de mantenimiento regular para la estructura y los paneles fotovoltaicos.
+    \item \textbf{Monitoreo estructural:} Implementar\cite{idaepctcon} sistemas de monitoreo para detectar cualquier cambio en el comportamiento estructural a lo largo del tiempo.
+\end{itemize}
+
+\subsubsection*{Seguridad y Acceso}
+\begin{itemize}
+    \item \textbf{Seguridad durante la instalación:} Garantizar que las prácticas de seguridad sean seguidas durante la instalación de los paneles.
+    \item \textbf{Accesibilidad:} Asegurar que haya acceso adecuado para el mantenimiento regular de los paneles sin comprometer la seguridad estructural.
+\end{itemize}
+
+
+
+\ifdefined\inputado % para que no meta la bibliografia de los parciales al inclustarlo con input en otro
+\else
+\bibliographystyle{plainnat}
+\bibliography{\path/referencias}
+\fi
+
+\end{document}
+

@@ -1,0 +1,288 @@
+\title{Estudio Técnico\\ \textbf{Mejora del Aislamiento Térmico de los Invernaderos mediante Pantallas Térmicas}}
+% Declarar los datos como una tabla simple
+\newcommand{\resumen}{ 
+\begin{abstract}
+fasdfsad
+\end{abstract}  
+}
+
+% Declarar los datos como una tabla simple
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[conference,12pt]{IEEEtran}
+\usepackage[pdftex,pdfencoding=auto]{hyperref}
+\usepackage[utf8]{inputenc} % Allows UTF-8 input
+\usepackage{amsmath} % For mathematical equations
+\usepackage{lipsum} % Para texto falso
+\usepackage{tikz} % Para diagramas
+\usepackage{float}
+\usepackage{ragged2e} % Para usar la justificación del texto
+\usepackage[T1]{fontenc}    % Para una codificación de fuente adecuada
+\usepackage{colortbl} % Paquete para colores en tablas
+\usepackage{pgfplots}
+\usepackage[spanish]{babel} % produce error con las flechas de los tikz
+\usepackage{caption}
+\usepackage{pgffor}  % Paquete para bucles
+\usepackage{fancyhdr} % Para personalizar encabezados y pies de página
+\usepackage{pgfplotstable}
+\usepackage{booktabs}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
+\addto\captionsspanish{\renewcommand{\listtablename}{Índice de Tablas}} % Cambiar título a "Índice de Tablas"
+
+
+\setlength{\spaceskip}{4.8pt}
+% Redefinir la numeración de secciones, subsecciones y subsubsecciones
+\renewcommand{\thesection}{\arabic{section}} % 1, 2, 3...
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}} % 1.1, 1.2...
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}} % 1.1.1, 1.1.2...
+\let\OldTextField\TextField
+\renewcommand{\TextField}[2][]{%
+  \raisebox{-0.3ex}{\OldTextField[height=.85em,  bordercolor={1 1 1}, backgroundcolor={1 1 1},#1]{#2}}%
+}
+\renewcommand{\baselinestretch}{1.5}  % 1.5 es el valor estándar, pero puedes aumentarlo a 2, 2.5, etc.
+\renewcommand{\rmdefault}{phv}  % Cambia la fuente de texto a Helvetica
+\fontsize{12}{15}\selectfont  % Establece el tamaño de la fuente y la altura de línea
+\onecolumn
+% Configuración del pie de página
+\pagestyle{fancy}
+\fancyhf{} % Limpia cabeceras y pies de página
+\fancyfoot[C]{\thepage} % Centra el número de página en el pie
+% Eliminar líneas en cabecera y pie
+\renewcommand{\headrulewidth}{0pt} % Sin línea en la cabecera
+\renewcommand{\footrulewidth}{0pt} % Sin línea en el pie
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{\TextField[name=Proyecto,width=16cm]{}}
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\justifying
+\begin{Form}
+\maketitle
+\vspace{10cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|p{2cm}|p{8cm}|}
+        \hline
+        Técnico: &     \TextField[name=Tecnico,width=6cm]{} 
+        \\
+        \hline
+        Organización: &     \TextField[name=Organizacion,width=6cm]{} 
+        \\
+        \hline
+        NIF\/NIE: &    \TextField[name = NIF,width=6cm]{} 
+        \\ 
+        \hline
+        Fecha: &    \TextField[name = Fecha,width=6cm]{} 
+        \\ 
+        \hline
+        Firma: &     
+        \\ &
+        \\ &
+        \\ &
+        \\ \hline
+    \end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\resumen
+\tableofcontents
+\listoftables
+\listoffigures
+
+\newpage
+% \newpage
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+\section{pruebas de grafico y tabla con una lista de datos}
+
+
+
+
+% Datos no numéricos
+\pgfplotstableread[col sep=comma]{
+    Nombre dd dasdAS Asdas,Color,Forma
+    Manzana,Rojo,{\TextField[name=Tecnico,width=6cm]{}}
+    Plátano,Amarillo,Alargada
+    Uva,Morado,Pequeña
+    Limón,Verde,Ovalada
+    Naranja,Naranja,Redonda
+}\datosNoNumericos
+
+\pgfplotstableread[col sep=comma]{
+    x,y
+    1,.2
+    2,.3
+    3,.5
+    4,.7
+    5,.11
+}\misdatos
+
+
+% Crear el gráfico
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}[scale=.63]
+        \begin{axis}[
+            xlabel={Eje X},
+            ylabel={Eje Y},
+            grid=both,
+            xtick=\empty, % No mostrar los valores del eje X
+            ytick=\empty  % No mostrar los valores del eje Y
+        ]
+            \addplot+[ybar] table[x=x, y=y] {\misdatos};
+            \addplot+ {1/sqrt(2*pi)*exp(-x^2/2)};
+                  % Spline usando to[out=angle1, in=angle2]
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Una figura de ejemplo} % Título de la figura
+\end{figure}
+
+
+
+
+\begin{figure}[H]
+    \centering
+\begin{tikzpicture}[scale=.5, every node/.style={font=\small}]
+    % Ejes
+    \draw[] (0,0) -- (10,0) node[right, align=center] {i};
+    \draw[] (0,-2) -- (0,4) node[above]{VAN};
+
+    \draw[thick, blue] (.5,4) to[out=-50, in=150] (4,0);
+    \draw[thick, blue] (4,0) to[out=-30, in=170] (9,-1);
+
+    % Punto TIR
+    \node[red] at (4,0) {\textbullet}; % Punto donde VAN = 0
+    \node[below] at (4,0) {TIR};
+\end{tikzpicture}
+\caption{Curva de TIR: Punto de intersección donde VAN = 0.}
+\label{fig:tir}
+\end{figure}
+
+
+% Tabla con datos no numéricos
+\begin{table}[ht]
+    \centering
+    \caption{Una Tabla de ejemplo}
+    \pgfplotstabletypeset[
+        col sep=comma,
+        every head row/.style={before row=\toprule, after row=\midrule},
+        every last row/.style={after row=\bottomrule},
+        string type % Indica que los datos son cadenas de texto
+    ]{\datosNoNumericos}
+\end{table}
+
+
+
+
+
+
+
+\section{5.1.1 Parte inicial (véase capítulo 6 y tabla 1). La parte inicial debe contener los elementos siguientes, en el orden
+que se indica a continuación:}
+
+\begin{itemize}
+
+    \item a) primera y segunda páginas de la cubierta, si son necesarias [6.1];
+    \item b) portada [6.2]1);
+    \item c) resumen [6.3];
+    \item d) índice [6.4];
+    \item e) glosario de signos, símbolos, unidades, abreviaturas, acrónimos o términos [6.5];
+    \item f) prefacio, si es necesario [6.6].
+\end{itemize}
+
+\section{5.1.2 Cuerpo del informe (véase capítulo 7 y tabla 1). El cuerpo del informe debe constar de las siguientes par-
+tes, en el orden que se indica a continuación:}
+
+\begin{itemize}
+
+    \item a) introducción [7.1];
+    \item b) núcleo del informe con ilustraciones esenciales y tablas [7.2];
+    \item c) conclusiones y recomendaciones [7.3];
+    \item d) agradecimientos, si los hubiere [7.4];
+    \item e) lista de referencias [7.5].
+\end{itemize}
+\section{5.1.3 Anexos (véase capítulo 8 y tabla 1). Los anexos se consideran separadamente de la parte final, debido a que,
+aunque no siempre se requieren, pueden formar parte esencial de algunos informes.
+}
+
+
+\section{5.1.4 Parte final (véase capítulo 9 y tabla 1). La parte final debe contener los siguientes elementos en el orden
+que se indica a continuación:}
+
+\begin{itemize}
+
+    \item a) hoja de datos del documento [9.1]1);
+    \item b) lista de distribución y disponibilidad (fuentes y condiciones), si se requiere [9.2];
+    \item c) cubierta posterior (páginas 3 y 4 de la cubierta), si se requiere [9.3].
+\end{itemize}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Referencias}
+\begin{itemize}
+    \item UNE 50135:1996
+
+\end{itemize}
+
+\end{Form}
+\end{document}

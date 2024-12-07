@@ -1,0 +1,77 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{report}
+\newcommand{\path}{../../../assets/settings}
+\newcommand{\inputado}{solo para indicar a los importados que no incluyan las referencias}
+\input{\path/newcommand.tex}
+\input{\path/usepackage.tex}
+% \input{../../../assets/settin
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\includegraphics[width=0.13\textwidth]{logo} \\ \proyectotitulo \\ \proyectosubtitulo }
+\author{
+\\
+\vspace{2cm} \\
+TITULAR: AYUNTAMIENTO DE MADRID \\
+CIF: XXXXXXXX \\
+EMPLAZAMIENTO INSTALACIÓN: CALLE GRAL. MOSCARDO, 2 \\
+LOCALIDAD: MADRID - 29003  \\
+\\
+\vspace{2cm} \\
+Proyectista: \proyectosubtitulo \\
+INGENIERÍA: KGNETE, INGENIERÍA Y CONSULTORÍA S.L. \\
+INGENIERÍA: KGNETE, INGENIERÍA Y CONSULTORÍA S.L. \\
+N$^o$ Colegiado: 26975
+\vspace{2cm} \\
+}
+\date{\today}
+\begin{document}
+
+
+
+
+
+
+
+
+\maketitle
+\tableofcontents
+
+
+
+
+
+\input{MEMORIA}
+\input{ANEXOS}
+% \input{PLIEGO DE CONDICIONES}
+\input{PLIEGO DE CONDICIONES FV}
+\input{PLANOS}
+\input{PRESUPUESTO}
+
+
+
+\newpage
+\bibliographystyle{plainnat}
+\bibliography{\path/referencias}
+
+\vspace{15cm}
+\hspace{8cm}
+\begin{minipage}{11cm}
+    {
+        \today \\ 
+        \proyectotitulo \\
+        \proyectosubtitulo \\ 
+        (Revisión 0) \\ \\
+        \proyectistanombre \\ \\
+    
+    \qrcode[height=2cm]{https://kgnete.com/} \\
+    https://kgnete.com/
+    }
+\end{minipage}
+
+
+
+\end{document}
+
+
+
+

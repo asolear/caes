@@ -1,0 +1,278 @@
+\title{Informe Técnico \\ Evaluación Económica de la Inversión  }
+
+\newcommand{\resumen}{    Este informe presenta una evaluación económica de la inversión mediante el análisis de tres indicadores clave: 
+Tasa de Periodo de Retorno (PR), Valor Actual Neto (VAN) y Tasa Interna de Rentabilidad (TIR). 
+El objetivo es determinar la viabilidad y rentabilidad del proyecto en función de los flujos de caja esperados a lo 
+largo del tiempo, así como las tasas de retorno asociadas.}
+
+% Declarar los datos como una tabla simple
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[conference,12pt]{IEEEtran}
+\usepackage[pdftex,pdfencoding=auto]{hyperref}
+\usepackage[utf8]{inputenc} % Allows UTF-8 input
+\usepackage{amsmath} % For mathematical equations
+\usepackage{lipsum} % Para texto falso
+\usepackage{tikz} % Para diagramas
+\usepackage{float}
+\usepackage{ragged2e} % Para usar la justificación del texto
+\usepackage[T1]{fontenc}    % Para una codificación de fuente adecuada
+\usepackage{colortbl} % Paquete para colores en tablas
+\usepackage{pgfplots}
+\usepackage[spanish]{babel} % produce error con las flechas de los tikz
+\usepackage{caption}
+\usepackage{pgffor}  % Paquete para bucles
+\usepackage{fancyhdr} % Para personalizar encabezados y pies de página
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\spaceskip}{4.8pt}
+% Redefinir la numeración de secciones, subsecciones y subsubsecciones
+\renewcommand{\thesection}{\arabic{section}} % 1, 2, 3...
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}} % 1.1, 1.2...
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}} % 1.1.1, 1.1.2...
+\let\OldTextField\TextField
+\renewcommand{\TextField}[2][]{%
+  \raisebox{-0.3ex}{\OldTextField[height=.85em,  bordercolor={1 1 1}, backgroundcolor={1 1 1},#1]{#2}}%
+}
+\renewcommand{\baselinestretch}{1.5}  % 1.5 es el valor estándar, pero puedes aumentarlo a 2, 2.5, etc.
+\renewcommand{\rmdefault}{phv}  % Cambia la fuente de texto a Helvetica
+\fontsize{12}{15}\selectfont  % Establece el tamaño de la fuente y la altura de línea
+\onecolumn
+% Configuración del pie de página
+\pagestyle{fancy}
+\fancyhf{} % Limpia cabeceras y pies de página
+\fancyfoot[C]{\thepage} % Centra el número de página en el pie
+% Eliminar líneas en cabecera y pie
+\renewcommand{\headrulewidth}{0pt} % Sin línea en la cabecera
+\renewcommand{\footrulewidth}{0pt} % Sin línea en el pie
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{\TextField[name=Proyecto,width=16cm]{}}
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\justifying
+\begin{Form}
+\maketitle
+\vspace{10cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|p{2cm}|p{8cm}|}
+        \hline
+        Técnico: &     \TextField[name=Tecnico,width=6cm]{} 
+        \\
+        \hline
+        Organización: &     \TextField[name=Organizacion,width=6cm]{} 
+        \\
+        \hline
+        NIF/NIE: &    \TextField[name=NIF,width=6cm]{} 
+        \\ 
+        \hline
+        Fecha: &    \TextField[name=Fecha,width=6cm]{} 
+        \\ 
+        \hline
+        Firma: &     
+        \\ &
+        \\ &
+        \\ &
+        \\ \hline
+    \end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{abstract}
+    \resumen
+\end{abstract}
+\tableofcontents
+\newpage
+% \newpage
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Introducción}
+
+La evaluación económica considera inversión inicial del proyecto y los beneficios económicos derivados del mismo. A continuación, 
+se detalla algunas reglas generalmente utilizadas para decidir.
+
+\section{Indicadores Financieros}
+
+\subsection{Periodo de Retorno (PR)}
+
+El PR es el tiempo  necesario para recuperar la inversión inicial:
+
+$$
+PR=\frac{I_0}{B_t}
+$$
+
+\subsection{Valor Actual Neto (VAN)}
+
+El VAN calcula el valor presente de los flujos de caja futuros descontados, menos la inversión inicial. Representa el valor que la inversión agrega en términos monetarios.
+
+$$
+VAN = \sum_{t=0}^{n} \frac{B_t}{(1+i)^n} - I_0
+$$
+
+
+
+
+% \begin{figure}[H]
+%     \centering
+% \begin{tikzpicture}[scale=.5, every node/.style={font=\small}]
+%     % Ejes
+%     \draw[->] (0,0) -- (10,0) node[right]{Tasa de descuento (\%)};
+%     \draw[->] (0,-2) -- (0,4) node[above]{VAN};
+
+
+%     \draw[thick, blue] (0,3) to[out=0, in=180] (9,-2);
+
+% \end{tikzpicture}
+% \caption{Curva de TIR: Punto de intersección donde VAN = 0.}
+% \label{fig:tir}
+% \end{figure}
+
+\subsection{Tasa Interna de Retorno (TIR)}
+
+La Tasa Interna de Retorno (TIR) es la tasa de descuento que hace que el VAN sea igual a cero. Se calcula resolviendo la siguiente ecuación:
+
+$$
+    \sum_{t=0}^{n} \frac{B_t}{(1+TIR)^t} = I_0
+$$
+
+
+
+
+\begin{figure}[H]
+        \centering
+    \begin{tikzpicture}[scale=.5, every node/.style={font=\small}]
+        % Ejes
+        \draw[] (0,0) -- (10,0) node[right, align=center] {i};
+        \draw[] (0,-2) -- (0,4) node[above]{VAN};
+
+
+        % Spline usando to[out=angle1, in=angle2]
+        \draw[thick, blue] (.5,4) to[out=-50, in=150] (4,0);
+        \draw[thick, blue] (4,0) to[out=-30, in=170] (9,-1);
+
+        % Sombrear el área entre la curva y el eje X
+        % \fill[blue, opacity=0.1] (4,0) to[out=-30, in=170] (9,-1) -- (9,0) -- (4,0) -- cycle;
+
+   
+        % Punto TIR
+        \node[red] at (4,0) {\textbullet}; % Punto donde VAN = 0
+        \node[below] at (4,0) {TIR};
+
+        % Etiquetas adicionales
+        % \node[above] at (2,2) {VAN positivo};
+        % \node[below] at (7,-1.5) {VAN negativo};
+
+        % Líneas guía opcionales
+        % \draw[dashed] (5,0) -- (5,-1) node[below] {5\%};
+    \end{tikzpicture}
+    \caption{Curva de TIR: Punto de intersección donde VAN = 0.}
+    \label{fig:tir}
+\end{figure}
+
+
+Donde:
+\begin{itemize}
+    \item $I_0$: Inversión inicial [EUR].
+    \item $B_t$: Beneficio neto anual en el año.\footnote{Supuesto constante durante un número de periodos,.} [EUR/a].
+
+    \item $i$: Tasa de descuento.[\%]
+    \item $n$: Número de periodos del análisis [años].
+    \item $PR$: Periodo de Retorno. [años].
+    \item $VAN$: Valor Actual Neto.[EUR].
+    \item $TIR$: Tasa Interna de Retorno.[\%]
+\end{itemize}
+
+\section{Resultados}
+
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{
+        |p{1.20cm}
+        |p{1.2cm}
+        |p{.5cm}
+        |p{.5cm}
+        |p{.7cm}
+        |p{1.5cm}
+        |p{.7cm}
+        |}
+    \hline
+     $I_0$ &
+     $B_t$ &
+     i &
+     n & 
+     \cellcolor{gray!30}  PR &
+     \cellcolor{gray!30}  VAN &
+     \cellcolor{gray!30}  TIR \\ 
+     \hline
+     \TextField[name=I0,width=1.2cm]{} & 
+     \TextField[name=Bt,width=1.2cm]{} &
+     \TextField[name=i,width=.5cm]{} &
+     \TextField[name=n,width=.5cm]{} &
+     \TextField[name=PR,width=.7cm]{} &
+     \TextField[name=VAN,width=1.5cm]{} &
+     \TextField[name=TIR,width=.7cm]{} 
+    \\ \hline
+    \end{tabular}
+\end{table}
+
+
+\section{Conclusiones}
+
+La inversion propuesta 
+\TextField[name=evaluacion,width=3cm]{}
+
+
+La siguiente tabla resume los criterios para valorar la conveniencia de una inversión:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|>{\raggedright\arraybackslash}p{2cm}|>{\raggedright\arraybackslash}p{2cm}|>{\raggedright\arraybackslash}p{4cm}|}
+        \hline
+        \textbf{Indicador} & \textbf{Conveniente si...} & \textbf{Uso principal} \\ \hline
+        \textbf{Período de Retorno(PR)} & Menor que el período objetivo & Evaluar el riesgo y el tiempo necesario para recuperar la inversión. \\ \hline
+        \textbf{Valor Actual Neto (VAN)} & Mayor que 0 & Determinar si la inversión genera valor económico adicional. \\ \hline
+        \textbf{Tasa Interna de Retorno (TIR)} & Mayor que la tasa de descuento & Comparar la rentabilidad relativa con otras oportunidades o con el costo de capital. \\ \hline
+    \end{tabular}
+    \caption{Criterios de evaluación de una inversión.}
+    \label{tabla:criterios}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Referencias}
+    \begin{itemize}
+        \item \href{https://sam.nrel.gov/financial-models.html}
+        {SAM Financial Models}, Web: https://sam.nrel.gov/financial-models.html., NREL
+    
+    \end{itemize}
+\end{Form}
+
+
+\end{document}

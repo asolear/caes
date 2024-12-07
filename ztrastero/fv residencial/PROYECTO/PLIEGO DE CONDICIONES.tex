@@ -1,0 +1,194 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+\input{../../../assets/settings/newcommand.tex}
+\input{../../../assets/settings/usepackage.tex}
+\usepackage{nopageno} % Paquete para desactivar la numeración de páginas
+
+\begin{document}
+
+\chapter{ PLIEGO DE CONDICIONES}
+% copiado de algun otro prouecto
+\section{ Descripción de las instalaciones}
+Instalación fotovoltaica
+
+% ```py
+% <<o.v.loc['instalacion_tipo','v']>>
+% para uso <<o.v.loc['instalacion_uso','v']>>
+% situada en <<o.Ubicacion['v'].Direccion>>.
+% Con potencia pico de <<o.v.loc['Np','v']*o.g['v'].Pmp/1000>> kW
+% Esta compuesta por <<o.v.loc['Np','v']>> paneles de <<o.g['v'].Pmp>> W
+% Se prevee que genere <<o.v.loc['Ep','v']>> kWh., 
+% con un precio de la electicidad e IPC similar al ano anteior
+% ahorro mensual del <<o.v.loc['Am','v']>> %
+% periodo de amortizacion de <<o.v.loc['Pa','v']>> años.
+% ```
+
+\section{ Especificaciones de los materiales y elementos constitutivos}
+
+
+\subsection{PlacaFV}
+\PlacaFV
+
+\subsection{Soporte}
+\Soporte
+
+\subsection{Inversor}
+\Inversor
+
+\subsection{Bateria}
+\Bateria
+
+\subsection{Cable}
+\Cable
+Los cables cumplirán con las características especificadas la memoria y planos. Todos ellos serán de marca reconocida en el mercado y cumplirán las normas del REBT así como las normas UNE correspondientes. El material eléctrico será seleccionado de modo que se asegure que su temperatura máxima superficial no exceda la temperatura de ignición de los gases, vapores, polvos o fibras que puedan presentarse. Los materiales eléctricos estarán protegidos contra las influencias externas. Las exigencias de construcción asegurarán la conservación del modo de protección cuando el material se utilice en las condiciones específicas de servicio. El material eléctrico será utilizado en la gama de temperaturas para la que se ha diseñado y que deberá incluirse en su marcado. Si no se da ninguna referencia se considera que el margen de utilización está comprendido entre  -20oC y 40oC. Otras temperaturas deberán indicarse expresamente en el certificado del laboratorio.
+
+
+\subsubsection{ CABLES CONDUCTORES}
+
+Todos los conductores empleados en la instalación serán de cobre (salvo indicación especial) y deberán cumplir la norma UNE-2003, UNE-21022 o UNE-21064.
+
+Su aislamiento será de polietileno reticulado y cubierta exterior de PVC, apto para una tensión de servicio de 0.6/1 Kv. y 4 Kv. de tensión de prueba. La designación UNE de los mismos es RV-0.6/1KV.
+
+Los conductores de secciones comprendidas entre 1 y 4 mm2  serán como mínimo de clase 1. Los conductores de 6 mm y más serán como mínimo de clase 2.
+
+Las entradas de los cables y de los tubos a los aparatos eléctricos se realizará de acuerdo con el modo de protección  previsto.
+
+Los orificios del material eléctrico para entradas de cable o tubos no utilizados deberán cerrarse mediante piezas acorde con el modo de protección de que vaya dotado dicho material.
+
+En caso necesario, los cables y tubos estarán sellados para evitar el paso de gases y líquidos.
+
+El tipo de cable será el especificado en la memoria y planos. Se instalarán cortafuegos para evitar el corrimiento de gases, vapores y llamas por el interior de los tubos.
+
+Todo conductor debe poder seccionarse, en cualquier punto de la instalación en que derive, utilizando un dispositivo apropiado, tal como un borne de conexión, de forma que permita la separación completa de cada circuito derivado del resto de la instalación.
+
+Para el tendido de conductores la temperatura ambiente será superior a 10ºC, de no ser así se tomarán las precauciones establecidas por el fabricante.
+
+\subsubsection{ CANALIZACIONES}
+
+En el caso de proximidad de canalizaciones eléctricas con otras no eléctricas, se dispondrán de forma que entre las superficies exteriores de ambas se mantenga una distancia de, por lo menos, 3 cm. En caso de proximidad con conductos de calefacción, de aire caliente o de humo, las canalizaciones eléctricas se establecerán de forma que no puedan alcanzar una temperatura peligrosa y, por consiguiente, se mantendrán separadas por una distancia conveniente o por medio de pantallas calorífugas.
+
+Las canalizaciones eléctricas no se situarán paralelamente por debajo de otras que puedan dar lugar a condensaciones, a menos que se tomen las disposiciones necesarias para proteger las canalizaciones eléctricas contra los efectos de las condensaciones.
+
+Las canalizaciones eléctricas se dispondrán de modo que en cualquier momento se pueda controlar su aislamiento, localizar y separar las partes averiadas y, llegando el caso, reemplazar fácilmente los conductores deteriorados.
+
+Las canalizaciones eléctricas se establecerán de forma que por conveniente identificación de sus circuitos y elementos se pueda proceder en todo momento a reparaciones, transformaciones, etc.
+
+\subsubsection{ EMPALMES Y CONEXIONES}
+
+Los empalmes y conexiones de los conductores subterráneos, se efectuará, siguiendo métodos o sistemas que garanticen una perfecta continuidad del conductor y del  instalador
+
+\section{ Ejecución de las obras, productos, instalaciones o servicios}
+
+En relación al proceso de materialización del Proyecto, se definen las etapas agrupadas segun la figura,con una duracion de {o.gantt['Duracion'].sum()} dias, se prevee la entrega  para el
+{(date.today()+ timedelta(days=-7+int(o.gantt['Duracion'].sum()))).strftime("%d-%m-%Y")}
+
+{figltx.gantt()}
+
+\section{ Reglamentación y  normativa aplicables}
+Para la redacción del presente proyecto se han tenido en cuenta las normas y disposiciones legales (leyes, reglamentos, ordenanzas, nor-
+mas de obligado cumplimiento por su inclusión en disposiciones legales, etc.)
+
+{excel2md.normativa()}
+
+\section{ Otros Aspectos del contrato}
+
+\subsubsection{ NATURALEZA}
+
+Las condiciones técnicas que se detallan en este Pliego de  Condiciones Generales, complementan las mencionadas en las  especificaciones de la memoria, Planos y Presupuesto, que tienen, a todos  los efectos, valor de Pliego de Prescripciones Técnicas. Cualquier  discrepancia entre los diversos contenidos de los diferentes documentos  aludidos, será inmediatamente puesta en conocimiento de la Dirección  Facultativa de las Obras, única autorizada para su resolución.  
+
+No obstante, en condiciones puntuales que pudieran existir entre los  distintos documentos, prevalecerá aquel que, según criterio de la Dirección  Facultativa, sea más favorable para la buena marcha de la ejecución de la  obra, teniendo en cuenta para ello la calidad e idoneidad de los materiales  y resistencia de los mismos, así como una mayor tecnología aplicable.  
+
+Las obras objeto del contrato son las que quedan especificadas en los  restantes documentos que forman el proyecto, Memoria, Mediciones,  Presupuesto y Planos.  
+
+\subsubsection{ CONDICIONES DE INDOLE FACULTATIVA}
+\subsubsection{CONDICIONES GENERALES}
+
+Previamente a la formalización del Contrato, el Contratista deberá   haber visitado y examinado el emplazamiento de las obras, y de sus  alrededores, y se habrá  asegurado que las características del lugar, su  climatología, medios de acceso, vías de comunicación, instalaciones  existentes, etc., no afectarán al cumplimiento de sus obligaciones  contractuales.  
+
+Durante el período de preparación tras la firma del Contrato, deberá   comunicar a la Dirección de obra, y antes del comienzo de ésta: Los detalles  complementarios, la memoria de organización de obra, y el calendario de  ejecución pormenorizado.  
+
+Para realizar las acometidas de la obra, o de la edificación, se deberá  de cumplir el reglamento de Baja Tensión y el Reglamento de Alta Tensión en  el caso de las instalaciones eléctricas. En las restantes instalaciones se cumplirán las Normas propias de cada Compañía de Servicios y de forma general las Normas Básicas correspondientes.
+
+El Contratista, viene obligado a conocer, cumplir y hacer cumplir toda la normativa referente a la Seguridad y Salud de las Obras de Construcción,  instalando  todos los servicios higiénicos que sean precisos para el personal que intervenga en las obras.
+
+Los operarios serán de aptitud reconocida y experimentados en sus respectivos oficios, actuando bajo las ordenes del encargado, siendo este el que vigile la obra y haga cumplir en todo momento el Real decreto 1627/97 sobre Seguridad y salud en la construcción.
+
+La Dirección Facultativa podrá recusar a uno o a varios productores de la empresa o subcontratista de la misma por considerarlos incapaces, siendo obligación del Contratista reemplazar a estos productores o subcontratistas, por otros de probada capacidad.
+
+El Contratista, por sí mismo o por medio de un jefe de obra, o del encargado, estará en la obra durante la jornada legal del trabajo, y acompañará a la Dirección Facultativa en las visitas que esta haga a la obra.
+
+El contratista está obligado a realizar con su personal y materiales cuanto la dirección facultativa disponga para apeos, derribos, recalces o cualquier otra obra de carácter urgente, anticipando de momento este servicio.
+
+Es obligación del contratista el ejecutar cuanto sea necesario para la buena construcción y aspecto de las obras, aún cuando no se halle expresamente estipulado en los documentos del Proyecto, y dentro de los límites de posibilidades que los presupuestos determinen para cada unidad de obra y tipo de ejecución.
+
+Cualquier variación que se pretendiere ejecutar sobre la obra proyectada, deberá ser puesta en conocimiento del Ingeniero técnico director, y no podrá ser ejecutada sin su consentimiento. En caso contrario la Contrata, ejecutante de dicha unidad de obra, responderá de las consecuencias que ello originase. No será justificante ni eximente a estos efectos el hecho de que la indicación de la variación proviniera del señor Propietario.
+
+\subsubsection{NORMALIZACION DE LA EMPRESA SUMINISTRADORA DE ENERGIA ELECTRICA}
+
+El instalador está obligado a mantener el debido contacto con la empresa suministradora a través del Técnico Director de las instalaciones, para evitar criterios dispares así como para seguir las normas que dicte la Compañía.
+
+\subsubsection{CONDICION FINAL}
+
+La orden de comienzo de la obra será indicada por el Promotor o
+Propietario, quien responderá de ello si no dispone de los permisos
+correspondientes.
+
+
+
+% \chapter{ PLIEGO DE CONDICIONES}
+% % secciones segun la norma
+% \minitoc
+
+% % El pliego de condiciones es uno de los documentos que constituyen el Proyecto y tiene como misión establecer las con-
+% % diciones técnicas, económicas, administrativas, facultativas y legales para que el objeto del Proyecto pueda
+
+% % materializarse en las condiciones especificadas, evitando posibles interpretaciones diferentes de las deseadas.
+% % Su contenido y extensión queda a criterio de su autor y en función del tipo de Proyecto.
+% % En el caso de proyectos administrativos es suficiente con establecer las condiciones técnicas.
+
+% \section{ Descripción de las obras, productos, instalaciones o servicios.}
+
+% \section{ Las especificaciones de los materiales y elementos constitutivos del objeto del Proyecto}
+
+% \subsubsection{ Listado completo de los mismos}
+
+% \subsubsection{ Calidades mínimas a exigir para cada uno de los elementos constitutivos del Proyecto, indicando la norma (siexiste) que contemple el material solicitado,}
+% \subsubsection{ las pruebas y ensayos a que deben someterse}
+
+% \subsubsection{ Norma según la cual se van a realizar}
+
+% \subsubsection{ las condiciones de realización}
+
+% \subsubsection{ los resultados mínimos a obtener.}
+
+% \section{ Ejecución de las obras, productos, instalaciones o servicios.}
+
+% \section{ La reglamentación y la normativa aplicables incluyendo las recomendaciones o normas de no obligado cumplimiento que, sin ser preceptivas, se consideran de necesaria aplicación al Proyecto a criterio de su autor.}
+% \section{ Aspectos del contrato que se refieran directamente al Proyecto y que pudieran afectar a su objeto}
+
+% \subsubsection{ Documentos base para la contratación de su materialización.}
+
+% \subsubsection{ Limitaciones en los suministros, }
+% que especifiquen claramente dónde empieza y dónde termina la responsabilidad del
+% suministro y montaje.
+
+% \subsubsection{ Criterios de medición, valoración y abono.}
+
+% \subsubsection{ Criterios para las modificaciones al proyecto original, }
+% especificando el procedimiento a seguir para las mismas, su aceptación y cómo deben quedar reflejadas en la documentación final.
+
+% \subsubsection{ Pruebas y ensayos, }
+% especificando cuales y en qué condiciones deben someterse los suministros según lo indicado en el apartado b).
+
+% \subsubsection{ Garantía de los suministros, }
+% indicando el alcance, duración y limitaciones.
+
+% \subsubsection{ Garantía de funcionamiento}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

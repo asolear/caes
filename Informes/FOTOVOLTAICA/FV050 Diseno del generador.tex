@@ -1,0 +1,79 @@
+\documentclass{article}
+\newcommand{\path}{../../assets/settings}
+\input{\path/newcommand.tex}
+\input{\path/usepackage.tex}
+\input{\path/quitarnumerossecciones.tex}
+
+% \usepackage{nopageno} % Paquete para desactivar la numeración de páginas
+
+\title{Diseno del campo fotovoltaico}
+\author{Kgnete}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\subsection{Diseno del campo fotovoltaico }
+\footnote{    IDAE. 
+Instalaciones de
+Energía Solar Fotovoltaica.
+Pliego de Condiciones Técnicas de
+Instalaciones Conectadas a Red
+PCT-C-REV - julio 2011
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[x=0.01cm, y=0.4cm]
+
+% Puntos de control
+\def\Np{14}
+\def\isc{13.1}
+\def\voc{43.8*\Np}
+\def\vocm{.8*\voc}
+
+\def\vm{41.83*\Np}
+\def\im{12.23*\Np}
+
+\def\vni{600}
+\def\vai{200}
+\def\voxi{1000}
+\def\vomi{200}
+
+\draw[ mark=*,blue] plot[smooth] coordinates {(0,\isc) (\voc * 0.8,\isc * 0.9) (\voc,0)}  ;
+\draw[ mark=square,red] plot[smooth] coordinates {(0,\isc) (\vocm * 0.8,\isc * 0.9) (\vocm,0)} ;
+
+% Ejes
+\draw[->.] (-.2,0) -- (\voxi*1.05,0) node[right] {$V_{STRING}$};
+\draw[->.] (-.2,-1) -- (\voxi*1.05,-1) node[right] {$V_{INV}$};
+\draw[->.] (0,-.2) -- (0,\isc*1.1) node[above] {$I$};
+
+\draw[dashed,->.]   (\vocm* 0.8,\isc*1.1) -- (\vocm* 0.8,.190) ;
+
+% Etiquetas
+\fill[] (\vocm* 0.8,\isc*.9) circle (2pt) node[below left,black] {$P_{mp,70^oC}$};
+\fill[] (\vocm* 0.8,-.0) circle (2pt) node[above left] {$V_{mp,70^oC}$};
+
+\fill[] (\voc,0) circle (2pt) node[above right] {$V_{oc,0^oC}$};
+
+\fill[] (\vni,-1) circle (2pt) node[below right] {$V_{nom}$};
+\fill[] (\vai,-1) circle (2pt) node[below left] {$V_{arranq}$};
+\fill[] (\voxi,-1) circle (2pt) node[below left] {$V_{OPmax}$};
+\fill[] (\vomi,-1) circle (2pt) node[below right] {$V_{OPminq}$};
+\fill[] (0,\isc) circle (2pt) node[below right] {$I_{SC}$};
+
+\end{tikzpicture}
+\caption{Curva IV de la cadena segun la temperatura}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+\ifdefined\inputado % para que no meta la bibliografia de los parciales al inclustarlo con input en otro
+\else
+\bibliographystyle{plainnat}
+\bibliography{\path/referencias}
+\fi
+\end{document}

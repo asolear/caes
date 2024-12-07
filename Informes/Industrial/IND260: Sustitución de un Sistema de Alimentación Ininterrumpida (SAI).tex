@@ -1,0 +1,235 @@
+\title{Informe Técnico\\ \textbf{Sustitución de un Sistema de Alimentación
+Ininterrumpida (SAI) }}
+
+\newcommand{\resumen}{   
+    % \begin{abstract}
+    % \end{abstract}
+}
+
+% Declarar los datos como una tabla simple
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[conference,12pt]{IEEEtran}
+\usepackage[pdftex,pdfencoding=auto]{hyperref}
+\usepackage[utf8]{inputenc} % Allows UTF-8 input
+\usepackage{amsmath} % For mathematical equations
+\usepackage{lipsum} % Para texto falso
+\usepackage{tikz} % Para diagramas
+\usepackage{float}
+\usepackage{ragged2e} % Para usar la justificación del texto
+\usepackage[T1]{fontenc}    % Para una codificación de fuente adecuada
+\usepackage{colortbl} % Paquete para colores en tablas
+\usepackage{pgfplots}
+\usepackage[spanish]{babel} % produce error con las flechas de los tikz
+\usepackage{caption}
+\usepackage{pgffor}  % Paquete para bucles
+\usepackage{fancyhdr} % Para personalizar encabezados y pies de página
+\usepackage{circuitikz}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\spaceskip}{4.8pt}
+% Redefinir la numeración de secciones, subsecciones y subsubsecciones
+\renewcommand{\thesection}{\arabic{section}} % 1, 2, 3...
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}} % 1.1, 1.2...
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}} % 1.1.1, 1.1.2...
+\let\OldTextField\TextField
+\renewcommand{\TextField}[2][]{%
+  \raisebox{-0.3ex}{\OldTextField[height=.85em,  bordercolor={1 1 1}, backgroundcolor={1 1 1},#1]{#2}}%
+}
+\renewcommand{\baselinestretch}{1.5}  % 1.5 es el valor estándar, pero puedes aumentarlo a 2, 2.5, etc.
+\renewcommand{\rmdefault}{phv}  % Cambia la fuente de texto a Helvetica
+\fontsize{12}{15}\selectfont  % Establece el tamaño de la fuente y la altura de línea
+\onecolumn
+% Configuración del pie de página
+\pagestyle{fancy}
+\fancyhf{} % Limpia cabeceras y pies de página
+\fancyfoot[C]{\thepage} % Centra el número de página en el pie
+% Eliminar líneas en cabecera y pie
+\renewcommand{\headrulewidth}{0pt} % Sin línea en la cabecera
+\renewcommand{\footrulewidth}{0pt} % Sin línea en el pie
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{\TextField[name=Proyecto,width=16cm]{}}
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\justifying
+\begin{Form}
+\maketitle
+\vspace{10cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|p{2cm}|p{8cm}|}
+        \hline
+        Técnico: &     \TextField[name=Tecnico,width=6cm]{} 
+        \\
+        \hline
+        Organización: &     \TextField[name=Organizacion,width=6cm]{} 
+        \\
+        \hline
+        NIF\/NIE: &    \TextField[name = NIF,width=6cm]{} 
+        \\ 
+        \hline
+        Fecha: &    \TextField[name = Fecha,width=6cm]{} 
+        \\ 
+        \hline
+        Firma: &     
+        \\ &
+        \\ &
+        \\ &
+        \\ \hline
+    \end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\resumen
+\tableofcontents
+\newpage
+% \newpage
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{circuitikz} 
+    % Draw components
+    \node at (-1.5,0) {AC};
+    \draw (0,0) -- ++(-1,0);
+    \draw (0,0) to[sacdc] (2,0) ; 
+    \draw (2,0) to[battery] (2,-2) ; 
+    \draw (4,0) to[sdcac] (2,0); 
+    \draw (4,0) -- ++(1,0);
+    \node at (-1.5,0) {AC};
+    % Add bypass (parallel connection)
+    \draw (0,0) -- ++(0,1)   to[switch] (4,1)  -- ++(0,-1);
+    \node at (2,1.5) {Bypass};
+\end{circuitikz}
+
+
+
+\section*{11.1 Ejemplo 1: SAI de 10 kVA}
+
+Los datos necesarios para poder llevar a cabo el cálculo teórico de ahorro energético son:
+\begin{itemize}
+    \item La potencia activa máxima de salida del SAI.
+    \item El factor de potencia de entrada del SAI.
+    \item El rendimiento AC/AC del SAI.
+\end{itemize}
+
+La siguiente tabla muestra los valores de cada uno de los modelos de SAIs a comparar, pertenecientes a las series (SAI antiguo) y (SAI de nueva tecnología) respectivamente:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{} & \textbf{SAI antiguo 10 kVA} & \textbf{SAI nuevo 10 kVA} \\
+\hline
+Máx. potencia activa de salida & 8 kW & 9 kW \\
+\hline
+Factor de potencia de entrada & 0.83 & 1.00 \\
+\hline
+Rendimiento AC/AC & 86\% & 91\% \\
+\hline
+\end{tabular}
+\caption{Comparativa de parámetros entre SAI antiguo y SAI nuevo.}
+\end{table}
+
+El consumo de energía de un SAI durante 24 horas al día y 365 días al año es el siguiente:
+
+\[
+E = \frac{P \times H}{\eta \times fp}
+\]
+
+Donde:
+\begin{itemize}
+    \item \(E\): Energía consumida en un año.
+    \item \(P\): Potencia activa de la carga conectada a la salida del SAI (kW).
+    \item \(\eta\): Rendimiento AC/AC del SAI.
+    \item \(fp\): Factor de potencia de entrada del SAI.
+    \item \(H\): Horas de funcionamiento en un año.
+\end{itemize}
+
+Así, el consumo de energía del SAI antiguo 10 kVA con una carga de 8 kW es:
+
+\[
+E = \frac{8 \times 24 \times 365}{0.86 \times 0.83} = 98178.76 \text{ kWh}
+\]
+
+A continuación, se procede a calcular el consumo de energía del SAI nuevo 10 kVA. Sin embargo, como la serie SAI nuevo permite entregar más potencia activa que la serie SAI antiguo, para equiparar ambas energías consumidas se toma como potencia activa la menor de las dos, 8 kW:
+
+\[
+E = \frac{8 \times 24 \times 365}{0.91 \times 1} = 77010.99 \text{ kWh}
+\]
+
+La diferencia entre las dos energías consumidas es el ahorro energético obtenido:
+
+\[
+\Delta E = E_{\text{antiguo}} - E_{\text{nuevo}} = 98178.76 - 77010.99 = 21167.77 \text{ kWh}
+\]
+
+
+
+Considerando como precio medio del kWh a 0,10 €, el ahorro económico es el siguiente:
+
+\[
+\text{Ahorro} = \Delta E \times \text{Precio\_kWh} = 21167,77 \times 0,10 = 2116,77 \, \text{€}
+\]
+
+Siguiendo el mismo procedimiento de cálculo expuesto, se indican los ahorros económicos y energéticos para diferentes porcentajes de carga.
+
+Considerando la menor disipación que se produce por la sustitución de los SAI, el ahorro que se produce en el consumo del sistema de climatización (EER del equipo de 2,5) viene dado por la siguiente fórmula:
+
+\[
+\text{AhorroEnClima} = \frac{\Delta E}{\text{EER}} \times \text{Precio\_kWh} = \frac{21167,77}{2,5} \times 0,10 = 846,71 \, \text{€}
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Conclusiones}
+
+\section{Referencias}
+\begin{itemize}
+    \item \href{https://www.idae.es/tecnologias/eficiencia-energetica/edificacion/sistema-de-alimentacion-ininterrumpida-sai}
+    {IDAE Sistema de alimentación ininterrumpida (SAI)}.
+
+\end{itemize}
+
+\end{Form}
+\end{document}

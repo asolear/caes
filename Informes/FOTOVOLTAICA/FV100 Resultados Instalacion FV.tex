@@ -1,0 +1,37 @@
+
+\documentclass{article}
+
+\newcommand{\path}{../../assets/settings}
+\input{\path/newcommand.tex}
+\input{\path/usepackage.tex}
+\input{\path/quitarnumerossecciones.tex}
+
+
+% \usepackage{nopageno} % Paquete para desactivar la numeración de páginas
+
+\title{Resultados Instalacion FV}
+\author{Kgnete}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Resultados Instalacion FV    }
+\footnote{    IDAE. 
+Instalaciones de
+Energía Solar Fotovoltaica.
+Pliego de Condiciones Técnicas de
+Instalaciones Conectadas a Red
+PCT-C-REV - julio 2011}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ifdefined\inputado % para que no meta la bibliografia de los parciales al inclustarlo con input en otro
+\else
+\bibliographystyle{plainnat}
+\bibliography{\path/referencias}
+\fi
+
+
+\end{document}
