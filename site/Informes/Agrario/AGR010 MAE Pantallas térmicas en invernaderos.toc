@@ -1,0 +1,15 @@
+\babel@toc {spanish}{}\relax 
+\contentsline {section}{\numberline {1}Introducción}{3}{section.1}%
+\contentsline {section}{\numberline {2}Objetivos}{3}{section.2}%
+\contentsline {section}{\numberline {3}Descripción del Sistema}{3}{section.3}%
+\contentsline {section}{\numberline {4}Diseño e Instalación}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Materiales y Costos}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Costos de Operación y Mantenimiento}{5}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Análisis de Ahorros Energéticos}{5}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Retorno de Inversión (ROI)}{5}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Conclusiones}{5}{section.5}%
+\contentsline {section}{\numberline {6}Análisis Económico}{5}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Costos de Instalación}{5}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Ahorros Energéticos}{5}{subsection.6.2}%
+\contentsline {section}{\numberline {7}Conclusiones}{5}{section.7}%
+\contentsline {section}{\numberline {8}Referencias}{6}{section.8}%

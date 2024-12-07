@@ -1,0 +1,59 @@
+\documentclass{article}
+\newcommand{\path}{../../assets/settings}
+\input{\path/newcommand.tex}
+\input{\path/usepackage.tex}
+\input{\path/quitarnumerossecciones.tex}
+
+
+% \usepackage{nopageno} % Paquete para desactivar la numeración de páginas
+
+\title{MAE020 \\ Iluminacion mediante el cambio de lamparas}
+\author{Kgnete}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Cálculo del Retorno de Inversión (ROI)}
+
+\subsection*{Datos Iniciales:}
+\begin{itemize}
+    \item Número de lámparas: 100
+    \item Potencia de las lámparas incandescentes: 60 watts
+    \item Potencia de las lámparas LED: 10 watts
+    \item Horas de operación diarias: 10 horas
+    \item Días de operación anuales: 250 días
+    \item Costo de electricidad: \$0.10 por kWh
+    \item Costo de una lámpara LED: \$20 (por ejemplo)
+    \item Costo de instalación por lámpara: \$5 (por ejemplo)
+\end{itemize}
+
+
+\subsection*{Cálculo de Ahorro Energético:}
+\begin{align*}
+\text{Consumo Actual (Incandescentes):} & \quad 100 \, \text{lámparas} \times 60 \, \text{watts} = 6000 \, \text{watts} = 6 \, \text{kW} \\
+\text{Consumo Futuro (LED):} & \quad 100 \, \text{lámparas} \times 10 \, \text{watts} = 1000 \, \text{watts} = 1 \, \text{kW} \\
+\text{Ahorro de Energía:} & \quad 6 \, \text{kW} - 1 \, \text{kW} = 5 \, \text{kW} \\
+\text{Ahorro Anual de Energía:} & \quad 5 \, \text{kW} \times 10 \, \text{horas/día} \times 250 \, \text{días/año} = 12500 \, \text{kWh/año} \\
+\text{Ahorro Anual en Costos:} & \quad 12500 \, \text{kWh/año} \times \$0.10/\text{kWh} = \$1250/\text{año}
+\end{align*}
+
+\subsection*{Cálculo de la Inversión Inicial:}
+\begin{align*}
+\text{Costo de las lámparas LED:} & \quad 100 \, \text{lámparas} \times \$20/\text{lámpara} = \$2000 \\
+\text{Costo de instalación:} & \quad 100 \, \text{lámparas} \times \$5/\text{lámpara} = \$500 \\
+\text{Costo Total de la Inversión:} & \quad \$2000 + \$500 = \$2500
+\end{align*}
+
+\subsection*{Cálculo del Retorno de Inversión (ROI):}
+\[
+\text{ROI} = \frac{\text{Ahorro Anual en Costos}}{\text{Inversión Inicial}} \times 100 = \frac{\$1250}{\$2500} \times 100 = 50\%
+\]
+
+\subsection*{Cálculo del Período de Retorno de la Inversión (Payback Period):}
+\[
+\text{Período de Retorno} = \frac{\text{Inversión Inicial}}{\text{Ahorro Anual en Costos}} = \frac{\$2500}{\$1250/\text{año}} = 2 \, \text{años}
+\]
+
+\end{document}

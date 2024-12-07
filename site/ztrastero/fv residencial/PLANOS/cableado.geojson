@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "cableado",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::25830" } },
+"features": [
+{ "type": "Feature", "properties": { "id": null }, "geometry": { "type": "MultiLineString", "coordinates": [ [ [ 369630.179470414470416, 4058611.968433136120439 ], [ 369631.458827624388505, 4058613.621756299398839 ], [ 369636.418797115096822, 4058609.449083553161472 ], [ 369634.883568463206757, 4058607.303699924144894 ] ] ] } }
+]
+}

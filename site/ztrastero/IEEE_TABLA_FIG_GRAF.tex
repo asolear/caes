@@ -1,0 +1,165 @@
+% Declarar los datos como una tabla simple
+
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \documentclass[conference]{IEEEtran}
+\documentclass[conference,12pt]{IEEEtran}
+
+\usepackage[pdftex,pdfencoding=auto]{hyperref}
+\usepackage[utf8]{inputenc} % Allows UTF-8 input
+\usepackage{amsmath} % For mathematical equations
+\usepackage{lipsum} % Para texto falso
+\usepackage{tikz} % Para diagramas
+\usepackage{float}
+\usepackage{ragged2e} % Para usar la justificación del texto
+\usepackage[T1]{fontenc}    % Para una codificación de fuente adecuada
+\usepackage{colortbl} % Paquete para colores en tablas
+\usepackage{pgfplots}
+\usepackage[spanish]{babel} % produce error con las flechas de los tikz
+\usepackage{caption}
+\usepackage{pgffor}  % Paquete para bucles
+
+
+
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \setlength{\spaceskip}{4.8pt}
+
+% % Redefinir la numeración de secciones, subsecciones y subsubsecciones
+% \renewcommand{\thesection}{\arabic{section}} % 1, 2, 3...
+% \renewcommand{\thesubsection}{\thesection.\arabic{subsection}} % 1.1, 1.2...
+% \renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}} % 1.1.1, 1.1.2...
+
+% \let\OldTextField\TextField
+% \renewcommand{\TextField}[2][]{%
+%   \raisebox{-0.3ex}{\OldTextField[height=.85em,  bordercolor={1 1 1}, backgroundcolor={1 1 1},#1]{#2}}%
+% }
+
+% \renewcommand{\baselinestretch}{1.5}  % 1.5 es el valor estándar, pero puedes aumentarlo a 2, 2.5, etc.
+% \renewcommand{\rmdefault}{phv}  % Cambia la fuente de texto a Helvetica
+% \fontsize{12}{15}\selectfont  % Establece el tamaño de la fuente y la altura de línea
+% \onecolumn
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{titulo}
+\author{}
+\date{}
+\begin{document}
+\justifying
+\begin{Form}
+\maketitle
+\tableofcontents
+% \newpage
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\begin{abstract}
+Esteaa documento presenta ejemplos de tabla, gráfico de barras y un esquema básico de una caldera diseñado con TikZ.
+\end{abstract}
+
+\section{Introducción}
+Se presentan ejemplos de cómo incluir tablas, gráficos y diagramas en documentos IEEE.
+% Datos almacenados
+\pgfplotstableread[col sep=comma]{
+    x,y
+    1,.2
+    2,.3
+    3,.5
+    4,.7
+    5,.11
+}\misdatos
+
+% Gráfico
+% Crear el gráfico
+\begin{tikzpicture}[scale=.63]
+    \begin{axis}[
+        xlabel={Eje X},
+        ylabel={Eje Y},
+        grid=both,
+    ]
+        \addplot+[ybar] table[x=x, y=y] {\misdatos};
+        \addplot+ {1/sqrt(2*pi)*exp(-x^2/2)};
+    \end{axis}
+\end{tikzpicture}
+
+
+
+
+\section{Tabla de Datos}
+\begin{table}[h]
+    \centering
+    \caption{Datos de Ejemplo}
+    \begin{tabular}{@{}llc@{}}
+        \toprule
+        \textbf{Categoría} & \textbf{Descripción} & \textbf{Valor} \\ \midrule
+        A & Primer dato  & 10 \\
+        B & Segundo dato & 20 \\
+        C & Tercer dato  & 30 \\
+        \bottomrule
+    \end{tabular}
+    \label{tab:example}
+\end{table}
+
+\section{Gráfico de Barras}
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=\linewidth,
+            height=5cm,
+            ybar,
+            bar width=0.5cm,
+            ylabel={Valor},
+            symbolic x coords={A, B, C},
+            xtick=data,
+            nodes near coords,
+            nodes near coords align={vertical},
+            ymin=0,
+        ]
+        \addplot coordinates {(A,10) (B,20) (C,30)};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Gráfico de barras de los datos.}
+    \label{fig:bargraph}
+\end{figure}
+
+\section{Esquema de una Caldera}
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[scale=1]
+        % Cuerpo de la caldera
+        \draw[thick] (0,0) rectangle (4,6);
+        \node[align=center] at (2,3) {Cámara\\ de\\ Combustión};
+
+        % Tuberías
+        \draw[thick] (-1,4) -- (0,4); % Entrada
+        \draw[thick] (4,5) -- (5,5); % Salida
+
+        % Flechas
+        \draw[->,thick] (-1,4) -- (-0.5,4) node[midway, above] {Entrada};
+        \draw[->,thick] (4.5,5) -- (5,5) node[midway, above] {Salida};
+
+        % Indicador de presión
+        \draw[thick] (2,6) -- (2,7);
+        \node[circle, draw, fill=white, minimum size=1cm] at (2,7.5) {};
+        \node at (2,7.5) {P};
+
+        % Base de la caldera
+        \draw[thick] (0,-0.5) -- (4,-0.5);
+        \draw[thick] (1,-0.5) -- (1,-1);
+        \draw[thick] (3,-0.5) -- (3,-1);
+    \end{tikzpicture}
+    \caption{Esquema básico de una caldera.}
+    \label{fig:boiler}
+\end{figure}
+
+\section{Conclusión}
+Se ha demostrado cómo incluir elementos visuales en un documento IEEE.
+
+\end{document}

@@ -1,0 +1,74 @@
+\documentclass{article}
+\newcommand{\path}{../../../assets/settings}
+\newcommand{\inputado}{solo para indicar a los importados que no incluyan las referencias}
+\input{\path/newcommand.tex}
+\input{\path/usepackage.tex}
+% \input{../../../assets/settings/quitarnumerossecciones.tex}
+% \usepackage{nopageno} % Paquete para desactivar la numeración de páginas
+\title{ANEXOS}
+\author{KGNETE}
+\date{\today}
+\begin{document}
+\maketitle
+\chapter{ANEXOS}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Documentación de partida.}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Cálculos.}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \addcontentsline{toc}{subsection}{Diseno campo fotovoltaico}
+% \includepdf[pages=-, pagecommand={\thispagestyle{fancy}}]{../CALCULOS/Diseno del generador.pdf}
+\input{../CALCULOS/Diseno del generador}
+\newpage
+\input{../CALCULOS/Distancia minima entre filas de modulos}
+\newpage
+\input{../CALCULOS/Perdidas por orientacion e inclinacion}
+\newpage
+\input{../CALCULOS/Resultados Instalacion FV}
+\newpage
+\input{../CALCULOS/Análisis de seguridad estructural de las cubiertas}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Anexos de aplicación}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Seguridad}
+\subsection{Medio ambiente}
+\subsection{Eficiencia energética.}
+\subsection{Emplazamiento del proyecto,}
+\subsection{Gestion de residuos}
+\subsection{Certificaciones de solidez y Estudios de cargas}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Estudios con entidad propia}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Estudio Basico de Seguridad}
+\subsection{Estudio de Impacto Ambiental.}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsubsection{PROTECCIONES CC}
+\includepdf[pages=-, pagecommand={\thispagestyle{fancy}}]{../DOCUMENTOS/Fichas Tecnicas.pdf}
+% \subsubsection{PROTECCIONES AC}
+% \includepdf[pages=-]{pdf/fichatecnica/inversor_protecciones.pdf}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{plainnat}
+\bibliography{\path/referencias}
+
+
+\end{document}
+
+
+
+

@@ -1,0 +1,106 @@
+
+% enlaces
+% https://www.youtube.com/watch?v=IqSozXsITGc
+% normas une
+% https://plataforma-e.aenormas.aenor.com/
+% https://plataforma-e.aenormas.aenor.com/?hash=$2b$10$a2v23HMhQ6DtxKZrtl7uce6ZIcvdKkEgsTtYPLgNEoARhNn0gMj3i
+
+% \href{https://plataforma-e.aenormas.aenor.com/pdf/UNE/N0070393}{
+%     norma-une-en-iso-52120-1-2022    
+
+
+\documentclass[conference]{IEEEtran}
+\usepackage[utf8]{inputenc} % Allows UTF-8 input
+\usepackage{graphicx} % For images
+\usepackage{amsmath} % For mathematical equations
+\usepackage{lipsum} % Para texto falso
+\usepackage[pdfencoding=auto]{hyperref} 
+\let\OldTextField\TextField
+\renewcommand{\TextField}[2][]{%
+  \OldTextField[height=1.1em, bordercolor={1 1 1}, borderwidth=0, backgroundcolor={1 1 1 0},#1]{#2}%
+}
+
+
+
+\title{An Example IEEE Conference Paper}
+\author{
+    \IEEEauthorblockN{John Doe}
+    \IEEEauthorblockA{
+        Department of Computer Science\\
+        University Name, City, Country \\
+        Email: john.doe@example.com
+    }
+    \and
+    \IEEEauthorblockN{Jane Smith}
+    \IEEEauthorblockA{
+        Department of Electrical Engineering\\
+        Institute Name, City, Country \\
+        Email: jane.smith@example.com
+    }
+}
+
+\begin{document}
+\begin{Form}
+
+\maketitle
+
+\begin{abstract}
+This document demonstrates the IEEEtran class for typesetting conference papers. 
+The abstract section summarizes the main points of the paper concisely.
+\end{abstract}
+
+\begin{IEEEkeywords}
+IEEE, LaTeX, template, conference paper, example
+\end{IEEEkeywords}
+
+\section{Introduction}
+This jojo  \TextField[name=S,width=1.1cm]{} is an example of a conference paper formatted using the \texttt{IEEEtran} class. The introduction section introduces the topic and sets the context for the paper.
+
+\section{Methodology}
+This section explains the methodology. Use equations like:
+\begin{equation}
+    E = mc^2
+\end{equation}
+to include mathematical expressions.
+
+\subsection{Subsection Example}
+Subsections can be used to organize content. This is an example of a subsection.
+
+\section{Results}
+Results are presented here. Use figures like:
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.4\textwidth]{example-image}
+    \caption{An example figure.}
+    \label{fig:example}
+\end{figure}
+
+
+\section{Resultados}
+Aquí se presentan resultados:
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.4\textwidth]{example-image}
+    \caption{Ejemplo de figura.}
+    \label{fig:example}
+\end{figure}
+Más texto simulado:
+\begin{equation}
+    E = mc^2
+\end{equation}
+\lipsum[5]
+
+\section{Conclusión}
+Este documento utiliza el paquete \texttt{lipsum} para insertar texto simulado.
+\lipsum[6]
+\section{Conclusion}
+The conclusion summarizes the key findings and provides insights into future work.
+
+\section*{Acknowledgments}
+The authors would like to thank XYZ for their support.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{Form}
+\end{document}

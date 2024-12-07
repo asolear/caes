@@ -1,0 +1,16 @@
+\documentclass{article}
+\usepackage{caption}
+\usepackage{tikz}
+
+\begin{document}
+
+% TikZ fuera de un entorno figure
+\begin{center}
+\begin{tikzpicture}
+    \draw[thick] (0,0) rectangle (3,2);
+    \node at (1.5,1) {Invernadero};
+\end{tikzpicture}
+\captionof{figure}{Esquema de un invernadero.}
+\end{center}
+
+\end{document}

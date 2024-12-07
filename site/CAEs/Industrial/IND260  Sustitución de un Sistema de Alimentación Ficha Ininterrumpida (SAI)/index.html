@@ -63,69 +63,7 @@
     
     
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
-
-<script type='module'>
-    import * as pdfjsLib from '/js/pdfjs/pdf.mjs';
-    document.addEventListener('DOMContentLoaded', function () {
-        pdfjsLib.GlobalWorkerOptions.workerSrc = '/js/pdfjs/pdf.worker.mjs';
-        function renderPage(pdf, pageNumber, container) {
-            return pdf.getPage(pageNumber).then(page => {
-                const viewport = page.getViewport({ scale: 1 });
-                const containerWidth = container.clientWidth;
-                const scale = containerWidth / viewport.width;
-                const scaledViewport = page.getViewport({ scale });
-                const canvas = document.createElement('canvas');
-                canvas.className = 'pdf-page';
-                const context = canvas.getContext('2d');
-                canvas.style.width = `${scaledViewport.width}px`;
-                canvas.style.height = `${scaledViewport.height}px`;
-                const resolutionScale = 2;
-                canvas.height = scaledViewport.height * resolutionScale;
-                canvas.width = scaledViewport.width * resolutionScale;
-                container.appendChild(canvas);
-                const renderContext = {
-                    canvasContext: context,
-                    viewport: page.getViewport({ scale: scale * resolutionScale })
-                };
-                return page.render(renderContext).promise;
-            });
-        }
-        function renderPdf(url, container) {
-            return pdfjsLib.getDocument(url).promise.then(pdf => {
-                console.log(`PDF cargado en ${container.id}`);
-                const totalPages = pdf.numPages;
-                const renderPromises = [];
-                for (let pageNumber = 1; pageNumber <= totalPages; pageNumber++) {
-                    renderPromises.push(renderPage(pdf, pageNumber, container));
-                }
-                return Promise.all(renderPromises);
-            }).then(() => {
-                console.log(`Todas las páginas renderizadas en ${container.id}`);
-            }).catch(reason => {
-                console.error(reason);
-            });
-        }
-        function setupPdfContainers() {
-            document.querySelectorAll('[data-pdf-url]').forEach(container => {
-                const url = container.getAttribute('data-pdf-url');
-                renderPdf(url, container);
-            });
-        }
-        function setupDownloadButtons() {
-            document.querySelectorAll('[id^="download-btn-"]').forEach(button => {
-                const index = button.id.split('-').pop();
-                const url = document.getElementById(`pdf-container-${index}`).getAttribute('data-pdf-url');
-                button.addEventListener('click', function () {
-                    window.location.href = url;
-                });
-            });
-        }
-        setupPdfContainers();
-        setupDownloadButtons();
-    });
-</script>
 
 
   </head>
@@ -265,6 +203,51 @@
     
   
 
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Informes/Agrario/AGR010%20MAE%20Pantallas%20t%C3%A9rmicas%20en%20invernaderos/" class="md-tabs__link">
+          
+  
+  Informes
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../ztrastero/IEEE/" class="md-tabs__link">
+          
+  
+  Ztrastero
+
+        </a>
+      </li>
     
   
 
@@ -6182,6 +6165,1358 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Informes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Informes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Agrario
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Agrario
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Informes/Agrario/AGR010%20MAE%20Pantallas%20t%C3%A9rmicas%20en%20invernaderos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AGR010 MAE Pantallas térmicas en invernaderos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Comun
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Comun
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Informes/Comun/AAF010%20Evaluaci%C3%B3n%20Econ%C3%B3mica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    AAF010 Evaluación Económica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    FOTOVOLTAICA
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            FOTOVOLTAICA
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Informes/FOTOVOLTAICA/FV020%20Disposicion%20de%20los%20paneles/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FV020 Disposicion de los paneles
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Informes/FOTOVOLTAICA/FV030%20Rentabilidad%20de%20una%20bateria/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FV030 Rentabilidad de una bateria
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Informes/FOTOVOLTAICA/FV050%20Diseno%20del%20generador/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FV050 Diseno del generador
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Informes/FOTOVOLTAICA/FV100%20Resultados%20Instalacion%20FV/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FV100 Resultados Instalacion FV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Informes/FOTOVOLTAICA/FV230%20Distancia%20minima%20entre%20filas%20de%20modulos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FV230 Distancia minima entre filas de modulos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Informes/FOTOVOLTAICA/FV240%20Perdidas%20por%20orientacion%20e%20inclinacion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FV240 Perdidas por orientacion e inclinacion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Informes/FOTOVOLTAICA/FV350%20An%C3%A1lisis%20de%20seguridad%20estructural%20de%20las%20cubiertas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FV350 Análisis de seguridad estructural de las cubiertas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Informes/FOTOVOLTAICA/FV560%20Secciones/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    FV560 Secciones
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Industrial
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Industrial
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Informes/Industrial/IND250%20MAE%20Sustituci%C3%B3n%20total%20o%20parcial%20de%20la%20instalaci%C3%B3n%20t%C3%A9rmica%20por%20tecnolog%C3%ADa%20solar%20t%C3%A9rmica/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND250 MAE Sustitución total o parcial de la instalación térmica por tecnología solar térmica
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Informes/Industrial/IND260%3A%20Sustituci%C3%B3n%20de%20un%20Sistema%20de%20Alimentaci%C3%B3n%20Ininterrumpida%20%28SAI%29/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IND260: Sustitución de un Sistema de Alimentación Ininterrumpida (SAI)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    MEJORAS DE AHORRO ENERGETICO
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            MEJORAS DE AHORRO ENERGETICO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Informes/MEJORAS%20DE%20AHORRO%20ENERGETICO/MAE020%20iluminacion%20mediante%20el%20cambio%20de%20lamparas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MAE020 iluminacion mediante el cambio de lamparas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    RECARGA VEHICULO ELECTRICO
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            RECARGA VEHICULO ELECTRICO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Informes/RECARGA%20VEHICULO%20ELECTRICO/CAPACIDAD%20DISPONIBLE%20/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CAPACIDAD DISPONIBLE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Informes/RECARGA%20VEHICULO%20ELECTRICO/Recarga%20Ultrarr%C3%A1pida%20de%20Veh%C3%ADculo%20El%C3%A9ctrico%3A%20Caracter%C3%ADsticas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recarga Ultrarrápida de Vehículo Eléctrico: Características
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Ztrastero
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Ztrastero
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/IEEE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IEEE
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/IEEE_FORM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IEEE_FORM
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/IEEE_TABLA_FIG_GRAF/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    IEEE_TABLA_FIG_GRAF
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/MITECO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MITECO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/UNE%2050135/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    UNE 50135
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/pp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    pp
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fv residencial
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Fv residencial
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7_1" id="__nav_3_7_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    DOCUMENTOS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            DOCUMENTOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/fv%20residencial/DOCUMENTOS/Fichas%20Tecnicas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fichas Tecnicas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/fv%20residencial/DOCUMENTOS/Normativa%20Autoconsumo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Normativa Autoconsumo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/fv%20residencial/DOCUMENTOS/Planificacion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Planificacion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7_2" id="__nav_3_7_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    INCENTIVOS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            INCENTIVOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/fv%20residencial/INCENTIVOS/JUSTIFICACION/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JUSTIFICACION
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/fv%20residencial/INCENTIVOS/JUSTIFICACIONXMODULOS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    JUSTIFICACIONXMODULOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/fv%20residencial/INCENTIVOS/SOLICITUD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SOLICITUD
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7_3" id="__nav_3_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PERMISOS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            PERMISOS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/fv%20residencial/PERMISOS/Industria/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Industria
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_7_4" id="__nav_3_7_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    PROYECTO
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            PROYECTO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/fv%20residencial/PROYECTO/ANEXOS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ANEXOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/fv%20residencial/PROYECTO/MEDICIONES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MEDICIONES
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/fv%20residencial/PROYECTO/MEMORIA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MEMORIA
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/fv%20residencial/PROYECTO/PLANOS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PLANOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/fv%20residencial/PROYECTO/PLIEGO%20DE%20CONDICIONES%20FV/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PLIEGO DE CONDICIONES FV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/fv%20residencial/PROYECTO/PLIEGO%20DE%20CONDICIONES/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PLIEGO DE CONDICIONES
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/fv%20residencial/PROYECTO/PRESUPUESTO/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PRESUPUESTO
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../ztrastero/fv%20residencial/PROYECTO/PROYECTOS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PROYECTOS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -6323,8 +7658,6 @@
     
     
       <script src="../../../assets/javascripts/bundle.fe8b6f2b.min.js"></script>
-      
-        <script src="../../../js/pdfjs/pdf.mj"></script>
       
     
   </body>

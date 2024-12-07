@@ -1,0 +1,143 @@
+\title{Informe Técnico\\ \textbf{IND250 MAE Sustitución total o parcial de la instalación
+térmica por tecnología solar térmica}}
+
+\newcommand{\resumen}{    Este informe presenta una evaluación económica de la inversión mediante el análisis de tres indicadores clave: 
+Tasa de Periodo de Retorno (PR), Valor Actual Neto (VAN) y Tasa Interna de Rentabilidad (TIR). 
+El objetivo es determinar la viabilidad y rentabilidad del proyecto en función de los flujos de caja esperados a lo 
+largo del tiempo, así como las tasas de retorno asociadas.}
+
+% Declarar los datos como una tabla simple
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[conference,12pt]{IEEEtran}
+\usepackage[pdftex,pdfencoding=auto]{hyperref}
+\usepackage[utf8]{inputenc} % Allows UTF-8 input
+\usepackage{amsmath} % For mathematical equations
+\usepackage{lipsum} % Para texto falso
+\usepackage{tikz} % Para diagramas
+\usepackage{float}
+\usepackage{ragged2e} % Para usar la justificación del texto
+\usepackage[T1]{fontenc}    % Para una codificación de fuente adecuada
+\usepackage{colortbl} % Paquete para colores en tablas
+\usepackage{pgfplots}
+\usepackage[spanish]{babel} % produce error con las flechas de los tikz
+\usepackage{caption}
+\usepackage{pgffor}  % Paquete para bucles
+\usepackage{fancyhdr} % Para personalizar encabezados y pies de página
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\spaceskip}{4.8pt}
+% Redefinir la numeración de secciones, subsecciones y subsubsecciones
+\renewcommand{\thesection}{\arabic{section}} % 1, 2, 3...
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}} % 1.1, 1.2...
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}} % 1.1.1, 1.1.2...
+\let\OldTextField\TextField
+\renewcommand{\TextField}[2][]{%
+  \raisebox{-0.3ex}{\OldTextField[height=.85em,  bordercolor={1 1 1}, backgroundcolor={1 1 1},#1]{#2}}%
+}
+\renewcommand{\baselinestretch}{1.5}  % 1.5 es el valor estándar, pero puedes aumentarlo a 2, 2.5, etc.
+\renewcommand{\rmdefault}{phv}  % Cambia la fuente de texto a Helvetica
+\fontsize{12}{15}\selectfont  % Establece el tamaño de la fuente y la altura de línea
+\onecolumn
+% Configuración del pie de página
+\pagestyle{fancy}
+\fancyhf{} % Limpia cabeceras y pies de página
+\fancyfoot[C]{\thepage} % Centra el número de página en el pie
+% Eliminar líneas en cabecera y pie
+\renewcommand{\headrulewidth}{0pt} % Sin línea en la cabecera
+\renewcommand{\footrulewidth}{0pt} % Sin línea en el pie
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{\TextField[name=Proyecto,width=16cm]{}}
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\justifying
+\begin{Form}
+\maketitle
+\vspace{10cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|p{2cm}|p{8cm}|}
+        \hline
+        Técnico: &     \TextField[name=Tecnico,width=6cm]{} 
+        \\
+        \hline
+        Organización: &     \TextField[name=Organizacion,width=6cm]{} 
+        \\
+        \hline
+        NIF\/NIE: &    \TextField[name = NIF,width=6cm]{} 
+        \\ 
+        \hline
+        Fecha: &    \TextField[name = Fecha,width=6cm]{} 
+        \\ 
+        \hline
+        Firma: &     
+        \\ &
+        \\ &
+        \\ &
+        \\ \hline
+    \end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\begin{abstract}
+    \resumen
+\end{abstract}
+\tableofcontents
+\newpage
+% \newpage
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Conclusiones}
+La implementación de pantallas térmicas en los invernaderos es una inversión rentable a largo plazo, con beneficios económicos, productivos y ambientales. Este estudio demuestra que es una solución viable para agricultores interesados en optimizar sus recursos.
+
+\section{Referencias}
+\begin{itemize}
+    \item \href{https://www.idae.es/publicaciones/guia-de-energia-solar-termica-para-procesos-industriales}
+    {Guía IDAE 033: Guía de Energía Solar Térmica para Procesos Industriales (edición v1.0)}.
+
+    \item Artículo científico, Revista, Año.
+\end{itemize}
+
+\end{Form}
+\end{document}

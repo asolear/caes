@@ -1,0 +1,132 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}     % Para caracteres latinos
+
+\usepackage{geometry}
+\usepackage{helvet}  % Helvetica (sans-serif)
+\usepackage{array}
+\usepackage{titlesec} % Para personalizar títulos de secciones
+\usepackage[pdftex,pdfencoding=auto]{hyperref}
+\usepackage{tabularx}
+\usepackage{colortbl} % Paquete estándar para colorear celdas de tabla
+\usepackage{ragged2e} % Para usar la justificación del texto
+\usepackage{colortbl} % Paquete para colorear celdas de tablas
+\usepackage{lipsum} % Para texto falso
+
+
+% Redefinir \TextField para aplicar las opciones por defecto
+\let\OldTextField\TextField
+\renewcommand{\TextField}[2][]{%
+  \OldTextField[height=1.1em, bordercolor={1 1 1}, borderwidth=0, backgroundcolor={1 1 1 0}, #1]{#2}%
+}
+
+\geometry{a4paper, margin=1in}
+
+\setlength{\spaceskip}{4.8pt}
+\renewcommand{\baselinestretch}{1.4}  % 1.5 es el valor estándar, pero puedes aumentarlo a 2, 2.5, etc.
+\renewcommand{\rmdefault}{phv}  % Cambia la fuente de texto a Helvetica
+
+
+% Configuración para centrar títulos en mayúsculas sin negrita
+\titleformat{\section} % Cambia el formato de las secciones
+  {\normalfont\filcenter} % Formato del texto (normal, centrado, tamaño grande)
+  {} % Etiqueta (vacía para no mostrar números)
+  {0pt} % Espaciado entre etiqueta y título
+  {\MakeUppercase} % Convierte el título a mayúsculas
+
+
+\begin{document}
+\justifying
+
+\begin{Form}
+
+
+% Tabla que ocupa todo el ancho
+\setlength{\tabcolsep}{10pt} % Espaciado entre columnas
+
+\noindent
+\begin{table}[h!]
+    \begin{tabular}{|>{\centering\arraybackslash}p{4cm}|>{\centering\arraybackslash}p{11cm}|}
+    \hline
+    \textbf{Ficha} & \textbf{Ficha XXX010: Ficha imitación} \\ \hline
+    Código & XXX010 \\ \hline
+    Versión & V1.0 \\ \hline
+    Sector & Agrario \\ \hline
+    \end{tabular}
+\end{table}
+
+% \renewcommand{\baselinestretch}{1.5}  % Vuelve al interlineado por defecto
+
+
+\section*{1. Ámbito de aplicación}
+Instalación o sustitución de pantallas térmicas en invernaderos para cultivos agrícolas, plantas ornamentales o cultivos de flor. Se considera pantalla térmica al sistema pasivo de calefacción formado por hilos o filamentos de material poliéster o acrílico transparente o aluminizado, tejido o conformado en láminas continuas que actúan como barrera térmica entre el ambiente interior del invernadero y el exterior regulando el intercambio de calor.
+\footnote{Esta es la nota al pie de página.}
+\section*{2. Requisitos}
+El invernadero debe disponer de instalación térmica (calefacción) para garantizar las condiciones de temperatura en el interior.
+\section*{3. Cálculo del ahorro de energía}
+El ahorro de energía se medirá en términos de energía final, expresada en kWh/año, de acuerdo con la siguiente fórmula:
+\[
+AE_{TOTAL} = S \cdot (K_i - K_p) \cdot (t_i - t_e) \cdot h
+\]
+Donde:
+\begin{itemize}
+    \item $S$: Superficie de la cubierta ($m^2$)
+    \item $K_i$: Coeficiente global de pérdidas de calor por conducción-convección antes de la actuación ($kW/m^2 \cdot °C$)
+    \item $K_p$: Coeficiente global de pérdidas de calor por conducción-convección después de la actuación ($kW/m^2 \cdot °C$)
+    \item $t_i$: Temperatura del aire en el interior del invernadero ($°C$)
+    \item $t_e$: Temperatura del aire en el exterior del invernadero ($°C$)
+    \item $h$: Ciclo del cultivo (horas)
+\end{itemize}
+
+\section*{4. Resultado del cálculo}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|p{1cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|p{1.5cm}|}
+    \hline
+    \textbf{S} & \textbf{K\textsubscript{a}} & \textbf{P\textsubscript{u}} & \textbf{Y\textsubscript{o}} & \textbf{Y\textsubscript{a}} & \textbf{h} & \textbf{AE\textsubscript{TOT}} & \textbf{Di} \\ \hline
+    \TextField[name=S,width=1.5cm]{} & \TextField[name=K_a,width=1.5cm]{} & \TextField[name=P_u,width=1.5cm]{} & \TextField[name=Y_o,width=1.5cm]{} & \TextField[name=Y_a,width=1.5cm]{} & \TextField[name=h,width=1.5cm]{} & \TextField[name=AE_TOT,width=1.5cm]{} & \TextField[name=Di,width=1.5cm]{} \\ \hline
+    \end{tabular}
+    \caption{Tabla que ocupa todo el ancho de la página.}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|p{11cm}|p{4cm}|}
+    \hline
+    Duración indicativa de la actuación: & \hspace{2cm} años \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|p{5cm}|p{10cm}|}
+    \hline
+    Fecha inicio actuación: & \hspace{3cm} \\ \hline
+    Fecha fin actuación: & \hspace{3cm} \\ \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|p{5cm}|p{10cm}|}
+    \hline
+    Representante del solicitante: & \hspace{3cm} \\ \hline
+    NIF/NIE: & \hspace{3cm} \\ \hline
+    Firma electrónica: & \hspace{3cm} \\ \hline
+    \end{tabular}
+\end{table}
+
+\section*{5. Documentos para la justificación de los ahorros de la actuación y su realización}
+\begin{enumerate}
+    \item Ficha cumplimentada y firmada por el representante legal del solicitante.
+    \item Declaración responsable formalizada por el propietario inicial del ahorro de energía final referida a la solicitud y/u obtención de ayudas públicas.
+    \item Facturas justificativas de la inversión realizada, que incluyan una descripción detallada de los elementos principales.
+    \item Informe fotográfico antes y después de la actuación, que incluya las coordenadas geográficas.
+    \item Declaración responsable donde figuren los cultivos y la duración de sus ciclos anuales expresados en horas.
+    \item Declaración responsable formalizada por técnico competente, relativa al cálculo del coeficiente global de pérdidas de calor por conducción-convección antes y después de la actuación ($K_i$ y $K_p$).
+\end{enumerate}
+\end{Form}
+
+\end{document}

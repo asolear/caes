@@ -1,0 +1,55 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article}
+
+\input{../../../assets/settings/newcommand.tex}
+\input{../../../assets/settings/usepackage.tex}
+
+\usepackage{nopageno} % Paquete para desactivar la numeración de páginas
+
+\begin{document}
+
+\section*{DETERMINACIÓN DE LA CAPACIDAD DISPONIBLE POR UN CONSUMIDOR
+DOMÉSTICO PARA REALIZAR LA RECARGA DEL VE SIN AMPLIAR LA POTENCIA.}
+
+
+El operador del sistema (Red Eléctrica de España), calcula y publica regularmente las medidas de la demanda del
+sistema eléctrico peninsular y los perfiles finales de consumo. Gracias al proyecto perfila, estos perfiles de consumo
+aplicables a los consumidores domésticos se han podido determinar con precisión.
+
+En base a esta información, y con el objetivo de poder estimar de una manera razonable y robusta el margen de
+capacidad libre o “hueco” que tendrían los consumidores domésticos para realizar la cargar nocturna del VE, se han
+tomado los valores máximos para cada periodo horario del coeficiente de perfilado A publicado por REE durante el
+año 2015. Estos valores, ajustados en base 100 para el valor máximo de dicho coeficiente horario, han sido
+representados en la siguiente gráfica
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{diario_Consumo_kWh.png} % Ajusta la ruta y el tamaño según tus necesidades
+    \caption{Emplazamiento geográfico.}
+    \label{fig:etiqueta}
+  \end{figure}
+
+De esta manera, se obtiene el ratio horario de uso de la capacidad disponible por un consumidor doméstico.
+Suponiendo que los VE fuera programados para que iniciaran su carga a partir de la 1 de la mañana (hora de inicio
+de la tarifa de acceso supervalle, que coincide además con los precios más bajos de la energía en el mercado), un
+consumidor doméstico tendría disponible en un escenario de máxima demanda para esta hora, prácticamente el
+50\% de su capacidad de punta para poder realizar esta recarga.
+
+En caso el de que se comprobara que los VE conectados a los puntos de recarga de las viviendas no realizan en su
+mayoría una recarga lenta a partir de esta hora, este coeficiente debería ser recalculado.
+
+
+\begin{thebibliography}{9}
+    \bibitem{1}
+    REBT. GUÍA ITC-BT 52
+
+    \bibitem{2}
+    
+    \href{https://www.ree.es/es/clientes/generador/gestion-medidas-electricas/consulta-perfiles-de-consumo}{REE. Consulta los perfiles de consumo (TBD)}
+
+    
+
+\end{thebibliography}
+
+\end{document}
+

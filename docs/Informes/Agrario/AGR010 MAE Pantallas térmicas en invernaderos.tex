@@ -1,0 +1,328 @@
+\title{Estudio Técnico\\ \textbf{Mejora del Aislamiento Térmico de los Invernaderos mediante Pantallas Térmicas}}
+% Declarar los datos como una tabla simple
+\newcommand{\resumen}{ 
+% \begin{abstract}
+% fasdfsad
+% \end{abstract}  
+}
+
+% Declarar los datos como una tabla simple
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[conference,12pt]{IEEEtran}
+\usepackage[pdftex,pdfencoding=auto]{hyperref}
+\usepackage[utf8]{inputenc} % Allows UTF-8 input
+\usepackage{amsmath} % For mathematical equations
+\usepackage{lipsum} % Para texto falso
+\usepackage{tikz} % Para diagramas
+\usepackage{float}
+\usepackage{ragged2e} % Para usar la justificación del texto
+\usepackage[T1]{fontenc}    % Para una codificación de fuente adecuada
+\usepackage{colortbl} % Paquete para colores en tablas
+\usepackage{pgfplots}
+\usepackage[spanish]{babel} % produce error con las flechas de los tikz
+\usepackage{caption}
+\usepackage{pgffor}  % Paquete para bucles
+\usepackage{fancyhdr} % Para personalizar encabezados y pies de página
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\spaceskip}{4.8pt}
+% Redefinir la numeración de secciones, subsecciones y subsubsecciones
+\renewcommand{\thesection}{\arabic{section}} % 1, 2, 3...
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}} % 1.1, 1.2...
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}} % 1.1.1, 1.1.2...
+\let\OldTextField\TextField
+\renewcommand{\TextField}[2][]{%
+  \raisebox{-0.3ex}{\OldTextField[height=.85em,  bordercolor={1 1 1}, backgroundcolor={1 1 1},#1]{#2}}%
+}
+\renewcommand{\baselinestretch}{1.5}  % 1.5 es el valor estándar, pero puedes aumentarlo a 2, 2.5, etc.
+\renewcommand{\rmdefault}{phv}  % Cambia la fuente de texto a Helvetica
+\fontsize{12}{15}\selectfont  % Establece el tamaño de la fuente y la altura de línea
+\onecolumn
+% Configuración del pie de página
+\pagestyle{fancy}
+\fancyhf{} % Limpia cabeceras y pies de página
+\fancyfoot[C]{\thepage} % Centra el número de página en el pie
+% Eliminar líneas en cabecera y pie
+\renewcommand{\headrulewidth}{0pt} % Sin línea en la cabecera
+\renewcommand{\footrulewidth}{0pt} % Sin línea en el pie
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\author{\TextField[name=Proyecto,width=16cm]{}}
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\justifying
+\begin{Form}
+\maketitle
+\vspace{10cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|p{2cm}|p{8cm}|}
+        \hline
+        Técnico: &     \TextField[name=Tecnico,width=6cm]{} 
+        \\
+        \hline
+        Organización: &     \TextField[name=Organizacion,width=6cm]{} 
+        \\
+        \hline
+        NIF\/NIE: &    \TextField[name = NIF,width=6cm]{} 
+        \\ 
+        \hline
+        Fecha: &    \TextField[name = Fecha,width=6cm]{} 
+        \\ 
+        \hline
+        Firma: &     
+        \\ &
+        \\ &
+        \\ &
+        \\ \hline
+    \end{tabular}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\resumen
+\tableofcontents
+\newpage
+% \newpage
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Introducción}
+El aislamiento térmico en los invernaderos es fundamental para mejorar la eficiencia energética, reducir costos de operación y garantizar un entorno óptimo para los cultivos. Este estudio técnico aborda la implementación de pantallas térmicas como una solución efectiva para minimizar las pérdidas de calor, especialmente durante las noches frías.
+
+\section{Objetivos}
+\begin{itemize}
+    \item Reducir las pérdidas de calor mediante pantallas térmicas.
+    \item Optimizar el consumo energético de los sistemas de calefacción.
+    \item Mejorar las condiciones ambientales internas para maximizar la producción.
+    \item Evaluar la viabilidad económica y el impacto ambiental de la implementación.
+\end{itemize}
+
+\section{Descripción del Sistema}
+Las pantallas térmicas son barreras instaladas en el techo y paredes del invernadero, diseñadas para reducir las pérdidas de calor por radiación, convección y conducción. Existen dos tipos principales:
+\begin{itemize}
+    \item \textbf{Pantallas fijas:} Permanecen estáticas y cubren el área durante todo el periodo de uso.
+    \item \textbf{Pantallas retráctiles:} Se despliegan automáticamente o manualmente según las condiciones climáticas.
+\end{itemize}
+
+\section{Diseño e Instalación}
+El sistema consta de:
+\begin{itemize}
+    \item \textbf{Pantalla térmica:} Material reflectante o aislante según las necesidades del invernadero.
+    \item \textbf{Estructura de soporte:} Barras o rieles para sostener la pantalla.
+    \item \textbf{Mecanismo retráctil:} Opcional para pantallas móviles.
+\end{itemize}
+
+
+
+    
+
+
+\begin{center}
+
+    \begin{tikzpicture}[scale=.63]
+
+        % Estructura del invernadero
+        \draw[thick] (0,0) -- (4,2) -- (8,0) -- (8,-4) -- (0,-4) -- cycle; % Estructura exterior
+        \draw[thick] (4,2) -- (4,0); % Divisor central
+        
+        % Suelo del invernadero
+        \fill[green!20] (0,-4) rectangle (8,-3.9);
+        
+        % Cultivos en el interior
+        \foreach \x in {1.5,3,5,6.5}{
+            \draw[green!50!black, thick] (\x,-4) -- (\x,-3.5) 
+            ( \x-0.2, -3.5) -- (\x+0.2, -3.5) -- (\x, -3.1) -- cycle;
+        }
+        
+        % Pantalla térmica
+        \draw[red, dashed, thick] (0,0) -- (8,0); % Línea de la pantalla
+        \node[red] at (4,-.51) {Pantalla térmica}; % Etiqueta
+        
+        % % Flechas de transmisión de calor
+        % \draw[->, orange, thick] (2,0.5) -- (2,1.5);
+        % \draw[->, orange, thick] (6,0.5) -- (6,1.5);
+        
+        % % Sol
+        % \draw[yellow, very thick] (4,3) circle (0.6);
+        % \foreach \angle in {0,45,...,315}{
+        %     \draw[yellow, very thick] (4,3) -- ++(\angle:0.8);
+        % }
+        
+        % Etiquetas
+        \node[blue] at (4,-4.5) {Suelo y cultivos};
+        % \node at (4,2.5) {Cubierta del invernadero};
+        
+        \end{tikzpicture}
+\end{center}
+
+
+\begin{tikzpicture}
+
+    % Drawing the greenhouse structure
+    \draw[thick] (0,0) -- (6,0); % Base
+    \draw[thick] (0,0) -- (0,2) -- (3,3); % Left side
+    \draw[thick] (3,3) -- (6,2) -- (6,0); % Right side
+    
+    % Drawing the arrows and labels
+    %\draw[red, thick, ->] (2.5, 4) -- (2.5, 3.1) node[above] {$Q_n$}; % Solar radiation
+    %\draw[blue, thick, ->] (4.5, 3.5) -- (4.5, 3) node[right] {$Q_{cc}$}; % Convection to cover
+    %\draw[blue, thick, ->] (3, 3.5) -- (3, 3) node[right] {$Q_{ref}$}; % Reflected radiation
+    %\draw[blue, thick, ->] (5.5, 2) -- (4.5, 2) node[above] {$Q_{evp}$}; % Evaporation
+    %\draw[red, thick, <-] (4, 0.5) -- (4, 1.5) node[right] {$Q_{cal}$}; % Heating
+    %\draw[blue, thick, ->] (0, 0.5) -- (1, 0.5) node[above] {$Q_{ren}$}; % Renewed air
+    %\draw[blue, thick, ->] (2, -0.5) -- (2, 0) node[below] {$Q_{sue}$}; % Soil heat flux
+    
+    % Drawing the plants
+    \foreach \x in {1.5, 3, 4.5} {
+        \draw[thick, green!60!black] (\x, 0) -- (\x, 0.8);
+        \draw[thick, green!60!black] (\x, 0.4) -- (\x-0.2, 0.6);
+        \draw[thick, green!60!black] (\x, 0.4) -- (\x+0.2, 0.6);
+        \draw[thick, green!60!black] (\x, 0.8) -- (\x-0.2, 1.0);
+        \draw[thick, green!60!black] (\x, 0.8) -- (\x+0.2, 1.0);
+    }
+    
+    % Sprinkler
+    \draw[dashed, blue, thick] (3, 2.7) -- (3, 3.3);
+    \draw[dashed, blue, thick] (3, 2.7) -- (2.7, 3);
+    \draw[dashed, blue, thick] (3, 2.7) -- (3.3, 3);
+    
+    \end{tikzpicture}
+
+
+
+
+\begin{center}
+    \begin{tikzpicture}[scale=.5]
+        % Contorno del invernadero
+        \draw[thick] (0,0) rectangle (10,5); % Rectángulo principal (10m x 5m)
+        % \node at (5,-0.5) {10 m}; % Etiqueta de longitud
+        % \node[rotate=90] at (-0.5,2.5) {5 m}; % Etiqueta de ancho
+
+        % Áreas de cultivo
+        \fill[green!30] (0.5,0.5) rectangle (4.5,4.5); % Área izquierda
+        \fill[green!30] (5.5,0.5) rectangle (9.5,4.5); % Área derecha
+        \node at (2.5,2.5) {Cultivo}; % Etiqueta izquierda
+        \node at (7.5,2.5) {Cultivo}; % Etiqueta derecha
+
+        % Pasillo central
+        \fill[gray!20] (4.5,0.5) rectangle (5.5,4.5); % Pasillo
+        \node[rotate=90] at (5,2.5) {Pasillo}; % Etiqueta del pasillo
+
+        % Pantalla térmica
+        \draw[red, thick, dashed] (0.5,4) -- (9.5,4); % Línea de pantalla térmica
+        \node[red] at (5,4.2) {Pantalla Térmica}; % Etiqueta de la pantalla
+
+        % Puertas
+        \draw[thick] (4,0) -- (6,0); % Puerta inferior
+        % \node at (5,-0.2) {Puerta}; % Etiqueta puerta inferior
+
+        % % Indicaciones
+        % \draw[->] (10.5,2.5) -- (10,2.5) node[midway, above] {10 m}; % Longitud horizontal
+        % \draw[->] (5,5.5) -- (5,5) node[midway, right] {5 m}; % Longitud vertical
+    \end{tikzpicture}
+    \captionof{figure}{Invernadero con pantalla térmica.}
+    % \label{fig:plano_planta}
+\end{center}
+
+\newpage
+
+
+
+\subsection{Materiales y Costos}
+
+
+
+
+\subsection{Costos de Operación y Mantenimiento}
+\begin{itemize}
+    \item Mantenimiento anual del sistema retráctil: 50 €.
+    \item Sustitución de piezas cada 5 años (estimado): 100 €.
+\end{itemize}
+
+\subsection{Análisis de Ahorros Energéticos}
+Se estima que las pantallas térmicas reducirán el consumo energético en un 30\%, lo que equivale a un ahorro de 300 € anuales en un invernadero estándar.
+
+\subsection{Retorno de Inversión (ROI)}
+Con un costo inicial de 1,000 € y un ahorro anual de 300 €, el tiempo estimado de recuperación de la inversión es de aproximadamente \textbf{3.33 años}.
+
+\section{Conclusiones}
+La implementación de pantallas térmicas en invernaderos ofrece:
+\begin{itemize}
+    \item Ahorro significativo en costos energéticos.
+    \item Mejoras en la estabilidad térmica y productividad.
+    \item Retorno de inversión en un periodo razonable.
+\end{itemize}
+
+
+\section{Análisis Económico}
+\subsection{Costos de Instalación}
+\begin{itemize}
+    \item Pantalla térmica: 5 €/m².
+    \item Sistema de soporte y automatización: 1,500 €.
+\end{itemize}
+
+\subsection{Ahorros Energéticos}
+La instalación de pantallas térmicas puede reducir el consumo energético en un 30\%, lo que equivale a un ahorro anual de 600 € en un invernadero mediano.
+
+\section{Conclusiones}
+La implementación de pantallas térmicas en los invernaderos es una inversión rentable a largo plazo, con beneficios económicos, productivos y ambientales. Este estudio demuestra que es una solución viable para agricultores interesados en optimizar sus recursos.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Referencias}
+\begin{itemize}
+    \item Autor 1, Título del libro, Editorial, Año.
+    \item Artículo científico, Revista, Año.
+\end{itemize}
+
+\end{Form}
+\end{document}
